@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>一日实习生 · 宣传海报组 3:4</title>
+<style>
+@font-face{
+  font-family:'Zpix';
+  src:url('https://cdn.jsdelivr.net/gh/SolidZORO/zpix-pixel-font@latest/dist/Zpix.ttf') format('truetype');
+  font-display:block;
+}
+:root{
+  --blue:#2f6bff;
+  --blue-deep:#0b2a6b;
+  --blue-mid:#1d4ed8;
+  --sky:#7cc4ff;
+  --sky-light:#dcefff;
+  --paper:#f4f9ff;
+  --accent:#ffd23e;
+  --danger:#ff5d5d;
+  --font-body:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Zpix',monospace;
+  color:var(--blue-deep);
+  background:#666;
+  display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px 0;
+}
+body.export{background:#fff;display:block;padding:0;gap:0;}
+body.export .board{display:none;margin:0;}
+body.export .board.only{display:block;}
+
+/* ============ 画板 ============ */
+.board{
+  width:1080px;height:1440px;
+  background:var(--paper);
+  background-image:
+    linear-gradient(rgba(47,107,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47,107,255,.06) 1px, transparent 1px);
+  background-size:36px 36px;
+  position:relative;overflow:hidden;
+  flex:none;
+}
+/* 页脚条 */
+.pfoot{
+  position:absolute;left:0;right:0;bottom:0;height:64px;
+  background:var(--blue-deep);color:var(--sky);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 44px;font-size:24px;letter-spacing:2px;
+  border-top:5px solid var(--blue);
+}
+.pfoot .dot{width:16px;height:16px;background:#5dff8a;display:inline-block;margin-right:14px;vertical-align:-1px;}
+.pfoot b{color:var(--accent);font-weight:normal;}
+
+/* 通用组件 */
+.tag{
+  display:inline-block;background:var(--blue-deep);color:var(--accent);
+  padding:12px 28px;font-size:30px;letter-spacing:4px;
+  box-shadow:8px 8px 0 rgba(47,107,255,.4);
+}
+.card{
+  background:#fff;border:5px solid var(--blue-deep);
+  box-shadow:12px 12px 0 rgba(47,107,255,.35);
+}
+.hl{background:var(--sky-light);padding:0 6px;border-bottom:5px solid var(--blue);}
+.pxcloud{position:absolute;}
+
+/* ============ P1 封面 ============ */
+#p1{background:linear-gradient(180deg,#bfe0ff 0%,var(--paper) 88%);
+  background-size:auto;text-align:center;}
+#p1 .grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(47,107,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(47,107,255,.05) 1px,transparent 1px);background-size:36px 36px;}
+#p1 .banner{
+  position:absolute;top:0;left:0;right:0;height:96px;
+  background:var(--blue-deep);
+  border-bottom:6px solid var(--accent);
+  display:flex;align-items:center;justify-content:center;gap:24px;
+  color:#fff;font-size:32px;letter-spacing:4px;z-index:3;
+}
+#p1 .banner .star{color:var(--accent);}
+#p1 .inner1{position:relative;z-index:2;padding-top:150px;}
+#p1 .badge{
+  display:inline-block;background:var(--accent);border:5px solid var(--blue-deep);
+  padding:12px 36px;font-size:34px;box-shadow:8px 8px 0 var(--blue-deep);
+  margin-bottom:52px;
+}
+#p1 h1{
+  font-size:168px;letter-spacing:14px;
+  text-shadow:8px 8px 0 var(--sky),16px 16px 0 rgba(47,107,255,.3);
+  margin-bottom:16px;
+}
+#p1 .en{font-size:34px;color:var(--blue);letter-spacing:8px;margin-bottom:64px;}
+#p1 .dialog{
+  width:820px;margin:0 auto;background:#fff;border:6px solid var(--blue-deep);
+  box-shadow:12px 12px 0 rgba(47,107,255,.4);
+  padding:44px 40px;text-align:center;position:relative;
+}
+#p1 .dialog .who{
+  position:absolute;top:-28px;left:44px;background:var(--blue);color:#fff;
+  border:4px solid var(--blue-deep);font-size:26px;padding:6px 20px;letter-spacing:2px;
+}
+#p1 .dialog .say{font-family:var(--font-body);font-size:44px;font-weight:700;line-height:1.6;}
+#p1 .dialog .act{font-size:38px;color:var(--blue);margin-top:22px;}
+#p1 .dialog .act::before{content:'▶ ';}
+#p1 #intern1{margin:70px auto 0;width:260px;height:260px;}
+#p1 .press{margin-top:66px;font-size:30px;color:var(--blue);letter-spacing:8px;}
+
+/* ============ P2 这是什么 ============ */
+.phead{padding:64px 72px 0;}
+.phead .tag{margin-bottom:30px;}
+.phead h2{font-size:64px;letter-spacing:6px;line-height:1.35;}
+.phead .sub{font-size:28px;color:var(--blue);letter-spacing:4px;margin-top:14px;}
+#p2 .def{margin:36px 72px 0;padding:40px 44px;}
+#p2 .def p{font-family:var(--font-body);font-size:32px;line-height:1.85;}
+#p2 .def p+p{margin-top:20px;}
+#p2 .formula{margin:36px 72px 0;text-align:center;}
+#p2 .formula .f{
+  display:block;background:var(--blue-deep);color:#fff;font-size:33px;
+  padding:16px;border:5px solid var(--blue-deep);margin:0 auto;width:560px;
+}
+#p2 .formula .op{font-size:38px;color:var(--blue);padding:2px 0;display:block;}
+#p2 .formula .eq{color:#d9a400;}
+#p2 .formula .result{
+  display:block;width:720px;margin:0 auto;background:var(--accent);
+  border:5px solid var(--blue-deep);padding:26px 20px;font-size:38px;
+  box-shadow:10px 10px 0 rgba(11,42,107,.3);letter-spacing:2px;
+}
+
+/* ============ P3 一天任务链 ============ */
+#p3 .chain{margin:28px 100px 0;position:relative;}
+#p3 .chain::before{
+  content:'';position:absolute;left:53px;top:30px;bottom:30px;width:6px;
+  background:repeating-linear-gradient(180deg,var(--blue) 0 18px,transparent 18px 32px);
+}
+#p3 .step{
+  display:flex;align-items:center;gap:36px;position:relative;
+  margin-bottom:18px;
+}
+#p3 .qbox{
+  width:112px;height:112px;background:#fff;border:5px solid var(--blue-deep);
+  box-shadow:8px 8px 0 rgba(47,107,255,.35);
+  display:flex;align-items:center;justify-content:center;flex:none;
+  position:relative;z-index:1;
+}
+#p3 .qbox.final{background:var(--accent);}
+#p3 .qno{
+  position:absolute;top:-16px;left:-16px;width:40px;height:40px;
+  background:var(--blue);color:#fff;border:4px solid var(--blue-deep);
+  font-size:24px;display:flex;align-items:center;justify-content:center;
+}
+#p3 .qtext .qname{font-size:38px;letter-spacing:3px;}
+#p3 .qtext .qdesc{font-family:var(--font-body);font-size:25px;color:#3b5aa0;margin-top:6px;}
+#p3 .diary{
+  margin:22px 100px 0;background:var(--blue-deep);color:#fff;
+  border:5px solid var(--blue);box-shadow:10px 10px 0 rgba(47,107,255,.4);
+  padding:20px;text-align:center;font-size:29px;line-height:1.65;letter-spacing:2px;
+}
+#p3 .diary b{color:var(--accent);font-weight:normal;}
+
+/* ============ P4 角色 ============ */
+#p4 .phead h2{font-size:54px;}
+#p4 .pcard{
+  margin:26px 72px 0;background:#fff;border:5px solid var(--blue-deep);
+  box-shadow:10px 10px 0 rgba(47,107,255,.35);
+  padding:26px 36px;display:flex;gap:36px;align-items:flex-start;
+}
+#p4 .pcard svg{flex:none;}
+#p4 .pinfo h3{font-size:40px;margin-bottom:6px;}
+#p4 .pinfo .role{font-size:23px;color:var(--blue);letter-spacing:2px;margin-bottom:14px;}
+#p4 .pinfo p{font-family:var(--font-body);font-size:27px;line-height:1.65;}
+#p4 .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px;}
+#p4 .debuff,#p4 .buff{font-size:24px;padding:4px 16px;}
+#p4 .debuff{background:#ffecec;color:var(--danger);border:3px solid var(--danger);}
+#p4 .buff{background:#e8fff0;color:#0f9648;border:3px solid #0f9648;}
+
+/* ============ P5 情绪页 ============ */
+#p5{background:var(--blue-deep);
+  background-image:
+    linear-gradient(rgba(124,196,255,.10) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(124,196,255,.10) 2px, transparent 2px);
+  background-size:40px 40px;
+  color:#fff;text-align:center;
+}
+#p5 .qmark{font-size:120px;color:var(--accent);padding-top:210px;}
+#p5 h2{font-size:96px;line-height:1.6;letter-spacing:8px;margin-top:30px;}
+#p5 h2 .y{color:var(--accent);}
+#p5 .divider{width:320px;height:8px;margin:80px auto;
+  background:repeating-linear-gradient(90deg,var(--sky) 0 24px,transparent 24px 42px);}
+#p5 .sub{font-family:var(--font-body);font-size:34px;line-height:2.1;color:#cfe6ff;padding:0 120px;}
+#p5 .sub b{color:var(--accent);font-weight:normal;}
+#p5 .os{margin-top:76px;font-size:30px;color:var(--sky);letter-spacing:6px;}
+
+/* ============ P6 价值 ============ */
+#p6 .vcard{margin:36px 72px 0;padding:36px 44px;}
+#p6 .vcard h3{font-size:38px;color:var(--blue);margin-bottom:18px;display:flex;align-items:center;gap:16px;}
+#p6 .vcard h3::before{content:'';width:22px;height:22px;background:var(--accent);border:4px solid var(--blue-deep);flex:none;}
+#p6 .vcard p{font-family:var(--font-body);font-size:32px;line-height:1.9;}
+#p6 .fly{
+  margin:40px 72px 0;background:#fff;border:5px solid var(--blue-deep);
+  box-shadow:10px 10px 0 rgba(47,107,255,.35);padding:34px;text-align:center;
+}
+#p6 .fly h3{font-size:34px;color:var(--blue);margin-bottom:28px;letter-spacing:2px;}
+#p6 .wheel{display:flex;align-items:center;justify-content:center;gap:22px;}
+#p6 .node{background:var(--blue);color:#fff;border:5px solid var(--blue-deep);padding:22px 34px;font-size:34px;}
+#p6 .node:nth-child(3){background:var(--blue-mid);}
+#p6 .node:nth-child(5){background:var(--blue-deep);}
+#p6 .arr{font-size:40px;color:var(--blue);}
+#p6 .loop{margin-top:26px;font-size:26px;color:var(--blue);letter-spacing:3px;}
+
+/* ============ P7 尾页 ============ */
+#p7{text-align:center;}
+#p7 .mission{
+  margin:150px 80px 0;background:var(--blue-deep);color:#fff;
+  border:6px solid var(--blue);box-shadow:14px 14px 0 rgba(47,107,255,.4);
+  padding:70px 56px;position:relative;
+  background-image:
+    linear-gradient(rgba(124,196,255,.12) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(124,196,255,.12) 2px, transparent 2px);
+  background-size:36px 36px;
+}
+#p7 .mission .small{font-size:26px;color:var(--sky);letter-spacing:6px;margin-bottom:34px;}
+#p7 .mission p{font-size:44px;line-height:1.95;letter-spacing:2px;}
+#p7 .mission .f1{font-size:34px;letter-spacing:1px;}
+#p7 .mission .y{color:var(--accent);}
+#p7 .soon{
+  margin:70px 80px 0;border:5px dashed var(--blue-deep);
+  background:repeating-linear-gradient(45deg,#fff8e0 0 26px,#ffefb8 26px 52px);
+  padding:56px 40px;
+}
+#p7 .soon h3{font-size:42px;letter-spacing:6px;margin-top:26px;}
+#p7 .soon p{font-size:28px;color:var(--blue);margin-top:14px;letter-spacing:2px;}
+#p7 #intern7{margin:64px auto 0;width:200px;height:200px;}
+#p7 .bye{margin-top:30px;font-size:30px;color:var(--blue);letter-spacing:4px;}
+</style>
+</head>
+<body>
+
+<!-- ================= P1 封面 ================= -->
+<div class="board" id="p1">
+  <div class="banner"><span class="star">★</span> 参赛作品 · TRAE AI 创造力大赛 <span class="star">★</span></div>
+  <svg class="pxcloud" style="top:150px;left:60px" width="220" height="88" viewBox="0 0 30 12" shape-rendering="crispEdges"><rect x="4" y="4" width="22" height="6" fill="#fff"/><rect x="8" y="1" width="10" height="4" fill="#fff"/><rect x="2" y="6" width="26" height="4" fill="#fff"/></svg>
+  <svg class="pxcloud" style="top:300px;right:40px" width="280" height="112" viewBox="0 0 30 12" shape-rendering="crispEdges"><rect x="4" y="4" width="22" height="6" fill="#fff" opacity=".9"/><rect x="8" y="1" width="10" height="4" fill="#fff" opacity=".9"/><rect x="2" y="6" width="26" height="4" fill="#fff" opacity=".9"/></svg>
+  <svg class="pxcloud" style="top:560px;left:-30px" width="180" height="72" viewBox="0 0 30 12" shape-rendering="crispEdges"><rect x="4" y="4" width="22" height="6" fill="#fff" opacity=".8"/><rect x="8" y="1" width="10" height="4" fill="#fff" opacity=".8"/><rect x="2" y="6" width="26" height="4" fill="#fff" opacity=".8"/></svg>
+
+  <div class="inner1">
+    <div class="badge">★ 开源 · 游戏化 · 实习模拟器 ★</div>
+    <h1>一日实习生</h1>
+    <div class="en">ONE-DAY INTERN · 飞书 × 本地 AI AGENT</div>
+
+    <div class="dialog">
+      <div class="who">▶ 你的心声</div>
+      <div class="say">“在家抠脚，好想实习！”</div>
+      <div class="act">打开一日实习生，当场上班。</div>
+    </div>
+
+    <div id="intern1">
+      <svg width="260" height="260" viewBox="0 0 16 16" shape-rendering="crispEdges">
+        <rect x="4" y="1" width="8" height="2" fill="#0b2a6b"/><rect x="3" y="2" width="10" height="2" fill="#0b2a6b"/>
+        <rect x="4" y="3" width="8" height="4" fill="#ffe3c9"/>
+        <rect x="5" y="4" width="2" height="2" fill="#0b2a6b"/><rect x="9" y="4" width="2" height="2" fill="#0b2a6b"/>
+        <rect x="4" y="6" width="1" height="1" fill="#ff9d9d"/><rect x="11" y="6" width="1" height="1" fill="#ff9d9d"/>
+        <rect x="3" y="7" width="10" height="5" fill="#2f6bff"/><rect x="7" y="8" width="2" height="3" fill="#ffd23e"/>
+        <rect x="2" y="8" width="1" height="3" fill="#2f6bff"/><rect x="13" y="8" width="1" height="3" fill="#2f6bff"/>
+        <rect x="5" y="12" width="2" height="3" fill="#0b2a6b"/><rect x="9" y="12" width="2" height="3" fill="#0b2a6b"/>
+        <rect x="4" y="14" width="3" height="1" fill="#7cc4ff"/><rect x="9" y="14" width="3" height="1" fill="#7cc4ff"/>
+      </svg>
+    </div>
+    <div class="press">- PRESS START -</div>
+  </div>
+  <div class="pfoot"><span><span class="dot"></span>ONE-DAY INTERN v1.0</span><span><b>01</b> / 07</span></div>
+</div>
+
+<!-- ================= P2 这是什么 ================= -->
+<div class="board" id="p2">
+  <div class="phead">
+    <span class="tag">STAGE 1 · WHAT?</span>
+    <h2>这是个什么游戏？</h2>
+    <div class="sub">— 人人可玩、可造的实习模拟器 —</div>
+  </div>
+  <div class="def card">
+    <p>一个<span class="hl">基于飞书和本地 AI Agent 的游戏化实习模拟器开源平台</span>。下载一个「一日实习包」，接上你自己的 AI Agent 和个人飞书，就能沉浸式地在一家虚构公司上一天班。</p>
+    <p>下班时，自动生成一份可截图分享的搞笑<span class="hl">「实习日记」</span>——记录、创作、体验、复盘，全程由 AI 驱动。</p>
+  </div>
+  <div class="formula">
+    <span class="f">本地 Agent</span>
+    <span class="op">＋</span>
+    <span class="f">飞书开放平台</span>
+    <span class="op">＋</span>
+    <span class="f">在线平台</span>
+    <span class="op eq">＝</span>
+    <span class="result">人人可玩、可造的实习模拟器</span>
+  </div>
+  <div class="pfoot"><span><span class="dot"></span>ONE-DAY INTERN v1.0</span><span><b>02</b> / 07</span></div>
+</div>
+
+<!-- ================= P3 你的一天 ================= -->
+<div class="board" id="p3">
+  <div class="phead">
+    <span class="tag">SIDE QUEST · 玩法</span>
+    <h2>你的一天 · 任务链</h2>
+    <div class="sub">— 在虚构公司沉浸式上一天班 —</div>
+  </div>
+  <div class="chain">
+    <div class="step">
+      <div class="qbox"><span class="qno">1</span><svg width="76" height="76" viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="7" y="0" width="2" height="3" fill="#ff5d5d"/><rect x="6" y="2" width="1" height="1" fill="#ff5d5d"/><rect x="9" y="2" width="1" height="1" fill="#ff5d5d"/><rect x="2" y="5" width="12" height="9" fill="#0b2a6b"/><rect x="3" y="6" width="10" height="7" fill="#fff"/><rect x="4" y="7" width="1" height="1" fill="#0b2a6b"/><rect x="11" y="7" width="1" height="1" fill="#0b2a6b"/><rect x="5" y="8" width="1" height="1" fill="#0b2a6b"/><rect x="10" y="8" width="1" height="1" fill="#0b2a6b"/><rect x="6" y="9" width="1" height="1" fill="#0b2a6b"/><rect x="9" y="9" width="1" height="1" fill="#0b2a6b"/><rect x="7" y="10" width="2" height="1" fill="#0b2a6b"/></svg></div>
+      <div class="qtext"><div class="qname">被 AI 派活</div><div class="qdesc">早上刚打开飞书，需求已经拍到脸上</div></div>
+    </div>
+    <div class="step">
+      <div class="qbox"><span class="qno">2</span><svg width="76" height="76" viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="2" y="3" width="12" height="11" fill="#0b2a6b"/><rect x="3" y="4" width="10" height="3" fill="#2f6bff"/><rect x="5" y="1" width="1" height="3" fill="#0b2a6b"/><rect x="10" y="1" width="1" height="3" fill="#0b2a6b"/><rect x="3" y="7" width="10" height="6" fill="#fff"/><rect x="5" y="8" width="1" height="1" fill="#0b2a6b"/><rect x="7" y="8" width="1" height="1" fill="#0b2a6b"/><rect x="9" y="8" width="1" height="1" fill="#0b2a6b"/><rect x="5" y="10" width="1" height="1" fill="#0b2a6b"/><rect x="7" y="10" width="1" height="1" fill="#ffd23e"/><rect x="9" y="10" width="1" height="1" fill="#0b2a6b"/></svg></div>
+      <div class="qtext"><div class="qname">建立日程</div><div class="qdesc">日历瞬间被会议塞满，午休不复存在</div></div>
+    </div>
+    <div class="step">
+      <div class="qbox"><span class="qno">3</span><svg width="76" height="76" viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="3" y="2" width="4" height="1" fill="#0b2a6b"/><rect x="3" y="3" width="4" height="3" fill="#ffe3c9"/><rect x="2" y="7" width="6" height="5" fill="#2f6bff"/><rect x="9" y="4" width="4" height="1" fill="#0b2a6b"/><rect x="9" y="5" width="4" height="3" fill="#ffe3c9"/><rect x="8" y="9" width="6" height="5" fill="#7cc4ff"/></svg></div>
+      <div class="qtext"><div class="qname">被拉进群</div><div class="qdesc">「欢迎实习生！」群名越来越长</div></div>
+    </div>
+    <div class="step">
+      <div class="qbox"><span class="qno">4</span><svg width="76" height="76" viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="1" y="1" width="8" height="6" fill="#0b2a6b"/><rect x="2" y="2" width="6" height="4" fill="#fff"/><rect x="3" y="7" width="1" height="1" fill="#0b2a6b"/><rect x="3" y="3" width="1" height="2" fill="#2f6bff"/><rect x="5" y="3" width="1" height="2" fill="#2f6bff"/><rect x="7" y="8" width="8" height="6" fill="#0b2a6b"/><rect x="8" y="9" width="6" height="4" fill="#ff5d5d"/><rect x="12" y="14" width="1" height="1" fill="#0b2a6b"/><rect x="10" y="9" width="1" height="3" fill="#fff"/><rect x="10" y="12" width="1" height="1" fill="#fff" opacity=".6"/></svg></div>
+      <div class="qtext"><div class="qname">开会吵架</div><div class="qdesc">评审会上观点交锋，谁也不服谁</div></div>
+    </div>
+    <div class="step">
+      <div class="qbox"><span class="qno">5</span><svg width="76" height="76" viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="3" y="3" width="10" height="10" fill="#0b2a6b"/><rect x="4" y="4" width="8" height="8" fill="#ffd23e"/><rect x="5" y="6" width="2" height="2" fill="#0b2a6b"/><rect x="9" y="6" width="2" height="2" fill="#0b2a6b"/><rect x="6" y="10" width="4" height="1" fill="#0b2a6b"/><rect x="5" y="9" width="1" height="1" fill="#ff9d9d"/><rect x="10" y="9" width="1" height="1" fill="#ff9d9d"/><rect x="13" y="2" width="2" height="2" fill="#7cc4ff"/><rect x="13" y="4" width="1" height="1" fill="#7cc4ff"/></svg></div>
+      <div class="qtext"><div class="qname">评审被怼</div><div class="qdesc">「这个方案的颗粒度…再对齐一下」</div></div>
+    </div>
+    <div class="step">
+      <div class="qbox"><span class="qno">6</span><svg width="76" height="76" viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="3" y="6" width="8" height="5" fill="#0b2a6b"/><rect x="4" y="7" width="6" height="3" fill="#7cc4ff"/><rect x="11" y="5" width="2" height="2" fill="#0b2a6b"/><rect x="11" y="10" width="2" height="2" fill="#0b2a6b"/><rect x="12" y="7" width="1" height="3" fill="#0b2a6b"/><rect x="5" y="8" width="1" height="1" fill="#0b2a6b"/><rect x="13" y="2" width="1" height="1" fill="#7cc4ff"/><rect x="14" y="4" width="1" height="1" fill="#7cc4ff"/><rect x="1" y="12" width="14" height="1" fill="#7cc4ff" opacity=".5"/></svg></div>
+      <div class="qtext"><div class="qname">摸鱼划水</div><div class="qdesc">带薪喝水，工位冥想，静待下班</div></div>
+    </div>
+    <div class="step">
+      <div class="qbox final"><span class="qno">7</span><svg width="76" height="76" viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="3" y="2" width="10" height="12" fill="#0b2a6b"/><rect x="4" y="3" width="8" height="10" fill="#2f6bff"/><rect x="4" y="3" width="2" height="10" fill="#0b2a6b"/><rect x="7" y="5" width="4" height="4" fill="#fff"/><rect x="8" y="6" width="2" height="1" fill="#0b2a6b"/><rect x="8" y="8" width="2" height="1" fill="#0b2a6b"/><rect x="13" y="1" width="1" height="1" fill="#ffd23e"/><rect x="14" y="3" width="1" height="1" fill="#ffd23e"/></svg></div>
+      <div class="qtext"><div class="qname">生成实习日记</div><div class="qdesc">下班！AI 把这一天写成段子</div></div>
+    </div>
+  </div>
+  <div class="diary">今天的社死瞬间、高光时刻、摸鱼实录——<br><b>自动生成，一键截图分享</b></div>
+  <div class="pfoot"><span><span class="dot"></span>ONE-DAY INTERN v1.0</span><span><b>03</b> / 07</span></div>
+</div>
+
+<!-- ================= P4 角色 ================= -->
+<div class="board" id="p4">
+  <div class="phead">
+    <span class="tag">STAGE 2 · WHO?</span>
+    <h2>SELECT PLAYER<br>这是为你做的</h2>
+  </div>
+
+  <div class="pcard">
+    <svg width="130" height="130" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <rect x="4" y="1" width="8" height="3" fill="#5a3b1e"/><rect x="4" y="3" width="8" height="4" fill="#ffe3c9"/>
+      <rect x="5" y="4" width="2" height="2" fill="#0b2a6b"/><rect x="9" y="4" width="2" height="2" fill="#0b2a6b"/>
+      <rect x="3" y="7" width="10" height="5" fill="#7cc4ff"/><rect x="7" y="8" width="2" height="2" fill="#fff"/>
+      <rect x="5" y="12" width="2" height="3" fill="#0b2a6b"/><rect x="9" y="12" width="2" height="3" fill="#0b2a6b"/>
+      <rect x="12" y="2" width="2" height="2" fill="#ffd23e"/><rect x="13" y="1" width="1" height="1" fill="#ffd23e"/>
+    </svg>
+    <div class="pinfo">
+      <h3>迷雾小白</h3>
+      <div class="role">PLAYER 01 · 没进过互联网大厂的新手村玩家</div>
+      <p>大厂实习到底怎么上班、群里怎么说话、会怎么开？好奇又没门路。训练营太贵太严肃，只想先轻松感受一下。</p>
+      <div class="tags"><span class="debuff">一头雾水</span><span class="debuff">没有门路</span><span class="debuff">课程太贵</span></div>
+    </div>
+  </div>
+
+  <div class="pcard">
+    <svg width="130" height="130" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <rect x="4" y="1" width="8" height="3" fill="#0b2a6b"/><rect x="4" y="3" width="8" height="4" fill="#ffe3c9"/>
+      <rect x="5" y="4" width="2" height="1" fill="#0b2a6b"/><rect x="9" y="4" width="2" height="1" fill="#0b2a6b"/>
+      <rect x="5" y="5" width="2" height="1" fill="#ff5d5d"/><rect x="9" y="5" width="2" height="1" fill="#ff5d5d"/>
+      <rect x="3" y="7" width="10" height="5" fill="#2f6bff"/><rect x="6" y="8" width="4" height="2" fill="#0b2a6b"/>
+      <rect x="5" y="12" width="2" height="3" fill="#0b2a6b"/><rect x="9" y="12" width="2" height="3" fill="#0b2a6b"/>
+      <rect x="1" y="3" width="2" height="1" fill="#ff5d5d"/><rect x="13" y="6" width="2" height="1" fill="#ff5d5d"/>
+    </svg>
+    <div class="pinfo">
+      <h3>上班上美了</h3>
+      <div class="role">PLAYER 02 · 想让别人也体验一下的大厂打工人</div>
+      <p>把日常工作沉淀成一个 skill「实习包」，让别人来体验你正在上什么班——复盘顺便分享经验（夹带私货）。</p>
+      <div class="tags"><span class="debuff">精神状态美丽</span><span class="buff">想分享</span><span class="buff">想复盘</span></div>
+    </div>
+  </div>
+
+  <div class="pcard">
+    <svg width="130" height="130" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <rect x="4" y="1" width="8" height="3" fill="#8a5a2b"/><rect x="4" y="3" width="8" height="4" fill="#ffe3c9"/>
+      <rect x="4" y="4" width="3" height="2" fill="#0b2a6b" opacity=".9"/><rect x="9" y="4" width="3" height="2" fill="#0b2a6b" opacity=".9"/><rect x="7" y="4" width="2" height="1" fill="#0b2a6b"/>
+      <rect x="3" y="7" width="10" height="5" fill="#ffd23e"/><rect x="7" y="8" width="2" height="3" fill="#2f6bff"/>
+      <rect x="5" y="12" width="2" height="3" fill="#0b2a6b"/><rect x="9" y="12" width="2" height="3" fill="#0b2a6b"/>
+      <rect x="13" y="2" width="1" height="3" fill="#2f6bff"/><rect x="12" y="3" width="3" height="1" fill="#2f6bff"/>
+    </svg>
+    <div class="pinfo">
+      <h3>职场段子手</h3>
+      <div class="role">PLAYER 03 · 传播职业内容的专业创作者</div>
+      <p>满肚子职场段子和岗位经验，但写「能让 AI 演出来」的剧本门槛太高——这里，把创作变简单。</p>
+      <div class="tags"><span class="buff">满肚子素材</span><span class="debuff">剧本门槛高</span><span class="debuff">缺工具</span></div>
+    </div>
+  </div>
+  <div class="pfoot"><span><span class="dot"></span>ONE-DAY INTERN v1.0</span><span><b>04</b> / 07</span></div>
+</div>
+
+<!-- ================= P5 情绪页 ================= -->
+<div class="board" id="p5">
+  <div class="qmark">?</div>
+  <h2>为什么不可以<br><span class="y">随意到处实习</span>呢</h2>
+  <div class="divider"></div>
+  <div class="sub">
+    实习本来就是<b>探索不同工作体验</b>的方式，<br>
+    而越来越高的垂直经验门槛，打破了它的初衷。<br><br>
+    秉承开源精神——<b>开源实习模拟器</b>，诞生了。
+  </div>
+  <div class="os">- OPEN SOURCE SPIRIT -</div>
+  <div class="pfoot"><span><span class="dot"></span>ONE-DAY INTERN v1.0</span><span><b>05</b> / 07</span></div>
+</div>
+
+<!-- ================= P6 价值 ================= -->
+<div class="board" id="p6">
+  <div class="phead">
+    <span class="tag">STAGE 3 · WHY?</span>
+    <h2>价值与意义</h2>
+  </div>
+  <div class="vcard card">
+    <h3>对用户 · 零成本零风险的职场演习</h3>
+    <p>既是解压娱乐、满足好奇；又近似真实地体验这份职业——让你快速成长的<span class="hl">求职助跑</span>。</p>
+  </div>
+  <div class="vcard card">
+    <h3>对创作者 · 全新 UGC 品类</h3>
+    <p>「实习体验」第一次变成<span class="hl">可创作、可复用、可评分</span>的内容：人设、事件、任务拆成积木跨包复用，<span class="hl">企业招聘也可入驻</span>发布官方实习包。</p>
+  </div>
+  <div class="fly">
+    <h3><svg width="30" height="30" viewBox="0 0 16 16" shape-rendering="crispEdges" style="vertical-align:-5px"><rect x="6" y="1" width="4" height="14" fill="#2f6bff"/><rect x="1" y="6" width="14" height="4" fill="#2f6bff"/><rect x="3" y="3" width="3" height="3" fill="#2f6bff"/><rect x="10" y="3" width="3" height="3" fill="#2f6bff"/><rect x="3" y="10" width="3" height="3" fill="#2f6bff"/><rect x="10" y="10" width="3" height="3" fill="#2f6bff"/><rect x="6" y="6" width="4" height="4" fill="#0b2a6b"/><rect x="7" y="7" width="2" height="2" fill="#fff"/></svg> 内容飞轮 CONTENT FLYWHEEL</h3>
+    <div class="wheel">
+      <span class="node">创作者</span><span class="arr">▶</span>
+      <span class="node">玩家</span><span class="arr">▶</span>
+      <span class="node">再创作</span>
+    </div>
+    <div class="loop">↺ 积木复用 · 循环滚动 · 越滚越大 ↺</div>
+  </div>
+  <div class="pfoot"><span><span class="dot"></span>ONE-DAY INTERN v1.0</span><span><b>06</b> / 07</span></div>
+</div>
+
+<!-- ================= P7 尾页 ================= -->
+<div class="board" id="p7">
+  <div class="mission">
+    <div class="small">— MISSION STATEMENT —</div>
+    <p><span class="f1">本地 Agent <span class="y">＋</span> 飞书开放平台 <span class="y">＋</span> 在线平台</span><br>
+    第一次做成一个<span class="y">人人可玩、可造</span>的<br>消费级娱乐实习模拟器</p>
+  </div>
+  <div class="soon">
+    <svg width="96" height="96" viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="5" y="1" width="6" height="1" fill="#0b2a6b"/><rect x="4" y="2" width="2" height="4" fill="#0b2a6b"/><rect x="10" y="2" width="2" height="4" fill="#0b2a6b"/><rect x="3" y="6" width="10" height="9" fill="#0b2a6b"/><rect x="4" y="7" width="8" height="7" fill="#ffd23e"/><rect x="7" y="9" width="2" height="2" fill="#0b2a6b"/><rect x="7" y="11" width="2" height="2" fill="#0b2a6b"/></svg>
+    <h3>DEMO · COMING SOON</h3>
+    <p>演示关卡正在施工中，敬请期待下一个版本</p>
+  </div>
+  <div id="intern7">
+    <svg width="200" height="200" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <rect x="4" y="1" width="8" height="2" fill="#0b2a6b"/><rect x="3" y="2" width="10" height="2" fill="#0b2a6b"/>
+      <rect x="4" y="3" width="8" height="4" fill="#ffe3c9"/>
+      <rect x="5" y="4" width="2" height="2" fill="#0b2a6b"/><rect x="9" y="4" width="2" height="2" fill="#0b2a6b"/>
+      <rect x="4" y="6" width="1" height="1" fill="#ff9d9d"/><rect x="11" y="6" width="1" height="1" fill="#ff9d9d"/>
+      <rect x="3" y="7" width="10" height="5" fill="#2f6bff"/><rect x="7" y="8" width="2" height="3" fill="#ffd23e"/>
+      <rect x="2" y="8" width="1" height="3" fill="#2f6bff"/>
+      <rect x="13" y="5" width="1" height="3" fill="#2f6bff"/>
+      <rect x="14" y="4" width="1" height="1" fill="#ffe3c9"/>
+      <rect x="5" y="12" width="2" height="3" fill="#0b2a6b"/><rect x="9" y="12" width="2" height="3" fill="#0b2a6b"/>
+      <rect x="4" y="14" width="3" height="1" fill="#7cc4ff"/><rect x="9" y="14" width="3" height="1" fill="#7cc4ff"/>
+    </svg>
+  </div>
+  <div class="bye">今天也辛苦啦，下班！</div>
+  <div class="pfoot"><span><span class="dot"></span>ONE-DAY INTERN v1.0</span><span><b>07</b> / 07</span></div>
+</div>
+
+<script>
+/* 导出模式：?p=N 只显示第 N 张 */
+const m = location.search.match(/p=(\d+)/);
+if(m){
+  document.body.classList.add('export');
+  const b = document.getElementById('p'+m[1]);
+  if(b) b.classList.add('only');
+}
+</script>
+</body>
+</html>
