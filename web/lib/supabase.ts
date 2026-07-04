@@ -28,3 +28,25 @@ export function packZipUrl(pack: InternPack): string | null {
   if (!pack.storage_path) return null;
   return `${url}/storage/v1/object/public/${BUCKET}/${pack.storage_path}`;
 }
+
+export type Run = {
+  id: string;
+  pack_id: string;
+  player_alias: string;
+  mode: string;
+  status: "running" | "done" | "aborted";
+  current_beat: string | null;
+  stats: Record<string, number>;
+  diary_url: string | null;
+  started_at: string;
+  updated_at: string;
+};
+
+export type RunEvent = {
+  id: number;
+  run_id: string;
+  t: string;
+  kind: string;
+  title: string;
+  detail: string;
+};

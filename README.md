@@ -13,10 +13,11 @@
 | [一日实习生.txt](一日实习生.txt) | 产品创意与定位 |
 | [docs/tech-route.md](docs/tech-route.md) | 技术路线与架构 |
 | [docs/lark-cli-toolkit.md](docs/lark-cli-toolkit.md) | lark-cli 工具库速查(按游戏动作组织) |
-| [docs/pack-spec.md](docs/pack-spec.md) | 实习包格式规范 v1 |
-| `.claude/skills/one-day-intern/` | 游戏引擎(Claude Code Skill) |
+| [docs/pack-spec.md](docs/pack-spec.md) | 实习包格式规范 v2(分幕提示词包) |
+| [engine/ENGINE.md](engine/ENGINE.md) | 游戏引擎规范(agent 中立,任何本地 AI 可运行) |
+| `.claude/skills/one-day-intern/` | 引擎的 Claude Code 适配器 |
 | [packs/pm-one-day/](packs/pm-one-day/) | 示例实习包:产品经理·一日实习 |
-| `web/` | 在线平台(Next.js + Supabase,实习包市场) |
+| `web/` | 平台(Next.js + Supabase:实习包市场 + 观战直播面板 /runs/[id]) |
 | [index.html](index.html) / [posters.html](posters.html) | 产品文档页与宣传海报(像素风) |
 
 ## 快速开始(玩家)
@@ -39,5 +40,5 @@ cd web && npm install && npm run dev
 
 ## 架构一句话
 
-**实习包是数据,引擎是技能,飞书是舞台,网站是货架。**
+**引擎是说明书,剧本是分幕的提示词弹药,agent 是玩家自带的主机,飞书是画面,平台是发行方+直播间。**
 详见 [docs/tech-route.md](docs/tech-route.md)。

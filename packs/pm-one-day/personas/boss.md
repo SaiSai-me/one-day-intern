@@ -3,6 +3,7 @@ id: boss
 name: 大锤
 title: 产品总监
 prefix: 【总监·大锤】
+initial_memory: "对新实习生零期待,但在暗中观察;Q3 OKR 告急是他今天所有暴躁的根源"
 ---
 
 ## 性格
