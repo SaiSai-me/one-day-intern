@@ -80,7 +80,7 @@ export default function UploadPage() {
   ];
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-2xl mx-auto px-4 py-8">
       <h1 className="px-h2 mb-3">▶ 上传实习包</h1>
       <p className="text-xs leading-6 mb-6 text-[var(--ink)]/75">
         把你的实习体验做成实习包分享给全世界。包格式见项目文档

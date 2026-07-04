@@ -103,3 +103,53 @@ body {
   padding: 5px 12px;
   font-size: 15px;
 }
+
+/* ============ 落地页 ============ */
+.hero-sky {
+  background: linear-gradient(180deg, #dceeff 0%, var(--paper) 55%, #e8f4ff 100%);
+  border-bottom: 4px solid var(--ink);
+}
+
+.px-btn-big {
+  font-size: 20px;
+  padding: 14px 34px;
+  border-width: 4px;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.marquee-wrap {
+  overflow: hidden;
+  border-top: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+  background: var(--yellow);
+  white-space: nowrap;
+}
+.marquee-inner {
+  display: inline-block;
+  padding: 6px 0;
+  font-size: 12px;
+  animation: marquee 30s linear infinite;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.px-chip {
+  display: inline-block;
+  border: 2px solid var(--ink);
+  background: var(--white);
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.05s;
+}
+.px-chip:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+.px-chip.active {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.blink { animation: blink 1.2s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0.25; } }

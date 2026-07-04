@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabase, type InternPack } from "@/lib/supabase";
 import DownloadButton from "./DownloadButton";
+import CollectButton from "@/components/CollectButton";
 
 export const revalidate = 30;
 
@@ -23,9 +24,9 @@ export default async function PackDetail({
   const requires = pack.requires ?? {};
 
   return (
-    <div className="max-w-3xl mx-auto">
-      <Link href="/" className="text-xs text-[var(--blue)] hover:underline">
-        ← 返回实习包市场
+    <div className="max-w-3xl mx-auto px-4 py-8">
+      <Link href="/market" className="text-xs text-[var(--blue)] hover:underline">
+        ← 返回实习集市
       </Link>
 
       <article className="px-card p-7 mt-4">
@@ -64,7 +65,10 @@ export default async function PackDetail({
           <div>✍️ 作者:{pack.author}</div>
         </div>
 
-        <DownloadButton pack={pack} />
+        <div className="flex gap-3 flex-wrap items-center">
+          <DownloadButton pack={pack} />
+          <CollectButton packId={pack.id} />
+        </div>
 
         <section className="mt-8 text-xs leading-7 text-[var(--ink)]/80">
           <h2 className="px-h2 !text-xs mb-3">▶ 怎么玩?</h2>
