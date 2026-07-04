@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Zpix";
+  src: url("https://cdn.jsdelivr.net/gh/SolidZORO/zpix-pixel-font@latest/dist/Zpix.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  --ink: #0b2a6b;
+  --blue: #2f6bff;
+  --sky: #7cc4ff;
+  --yellow: #ffd23e;
+  --red: #ff5d5d;
+  --green: #19b551;
+  --paper: #f4f9ff;
+  --white: #ffffff;
+}
+
+body {
+  font-family: "Zpix", "Press Start 2P", monospace;
+  color: var(--ink);
+  background: var(--paper);
+  background-image:
+    linear-gradient(rgba(124, 196, 255, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 196, 255, 0.35) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ============ 像素组件 ============ */
+.px-card {
+  background: var(--white);
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.px-card-hover {
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.px-card-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.px-btn {
+  display: inline-block;
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 8px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  background: var(--yellow);
+  color: var(--ink);
+  font-family: inherit;
+  transition: transform 0.05s, box-shadow 0.05s;
+}
+.px-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--ink);
+}
+.px-btn-blue {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.px-tag {
+  display: inline-block;
+  border: 2px solid var(--ink);
+  background: var(--sky);
+  color: var(--ink);
+  font-size: 11px;
+  padding: 2px 8px;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.px-badge-yellow {
+  display: inline-block;
+  background: var(--yellow);
+  border: 3px solid var(--ink);
+  padding: 4px 10px;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.px-input {
+  width: 100%;
+  border: 3px solid var(--ink);
+  background: var(--white);
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+.px-input:focus {
+  box-shadow: 4px 4px 0 var(--sky);
+}
+
+.px-h2 {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--white);
+  border: 3px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 5px 12px;
+  font-size: 15px;
+}

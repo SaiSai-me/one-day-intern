@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "pm-one-day",
+  "name": "产品经理·一日实习",
+  "tagline": "在跳动大厂当一天 PM,活着下班就算赢",
+  "role": "产品经理实习生",
+  "company": "跳动大厂",
+  "author": "一日实习生官方",
+  "version": "0.1.0",
+  "difficulty": "轻松搞笑",
+  "tags": ["产品经理", "大厂", "搞笑", "新手友好"],
+  "time_scale": {
+    "demo":      { "description": "压缩模式,全程约 15-20 分钟", "gap_seconds": [30, 90] },
+    "immersive": { "description": "沉浸模式,按 timeline 的真实钟点走", "gap_seconds": null }
+  },
+  "requires": {
+    "domains":  ["im", "task", "calendar"],
+    "optional": ["docs", "attendance"]
+  },
+  "stats": { "events": 10, "choices": 3, "npcs": 5 }
+}
