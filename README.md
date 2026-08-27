@@ -25,14 +25,5 @@ Skill 源码位于 `.agents/skills/one-day-intern/`，包括剧情、人设、�
 
 - Codex Desktop
 - 可使用自建应用的飞书账号
-- Python 3（仅用于本地存档校验和日记渲染，不需要第三方 Python 包）
 
 开局后会在你的飞书中创建本局所需的工作群、任务和日程；运行状态、日志和日记只保存在本地 `runs/` 目录，不上传到网站。
-
-## 仓库内容
-
-- `.agents/skills/one-day-intern/`：开源 Codex Skill 源码
-- `web/`：宣传页网站源码和实习包下载资源
-- `.github/workflows/deploy-pages.yml`：GitHub Pages 自动发布配置
-
-网站由 GitHub Pages 自动部署，访问入口见上方宣传页链接。
