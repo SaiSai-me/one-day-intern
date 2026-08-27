@@ -29,16 +29,19 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: web/package-lock.json
       - name: Install dependencies
+        working-directory: web
         run: npm ci
       - name: Build static site
+        working-directory: web
         run: npm run build
       - name: Disable Jekyll processing
-        run: touch out/.nojekyll
+        run: touch web/out/.nojekyll
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: web/out
 
   deploy:
     environment:
