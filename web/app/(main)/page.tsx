@@ -159,11 +159,11 @@ const PLAYERS = [
     tags: [{ text: "一头雾水", debuff: true }, { text: "没有门路", debuff: true }, { text: "课程太贵", debuff: true }],
   },
   {
-    name: "上班上美了", role: "PLAYER 02 · 想让别人也体验一下的大厂打工人",
+    name: "新手实习生 Landing", role: "PLAYER 02 · 刚入组，正在完成职场新手村",
     avatar: <Avatar02 />,
-    body: "想让别人也体验一下自己正在上什么班。制作自己的一日实习日记，将日常工作记录下来，沉淀成一个「实习包」——方便自己复盘，也把经验分享给别人。",
-    say: "「实习结束了，我来复盘一下，顺便分享个人经验。」怎么办？", act: "打开一日实习生，开始创作（开始夹带私货）。",
-    tags: [{ text: "精神状态美丽", debuff: true }, { text: "想分享", debuff: false }, { text: "想复盘", debuff: false }],
+    body: "刚入职的实习生，最难的往往不是一道题，而是不知道一天从哪里开始：任务怎么接、进度怎么报、群消息怎么回、会议该听什么、遇到问题该找谁。这个 Skill 把真实的工作节奏浓缩成可体验的任务链，让你在上岗前先走一遍流程、熟悉协作方式和团队氛围，带着底气开始第一天。",
+    say: "「明天就入职了，可我连第一天会发生什么都不知道。」怎么办？", act: "下载实习包，先在 AI 和飞书里预演一次上班。",
+    tags: [{ text: "流程不熟", debuff: true }, { text: "担心社恐", debuff: true }, { text: "快速上手", debuff: false }],
   },
   {
     name: "职场段子手", role: "PLAYER 03 · 传播职业内容的专业创作者",
@@ -303,7 +303,7 @@ export default function Home() {
           <article className="px-card px-card-hover skill-pack-card">
             <h3>产品经理</h3>
             <p className="text-xs leading-5 text-[var(--ink)]/70">人人都搞产品经理</p>
-            <a href={publicPath("/one-day-intern-player-v1.0.0.zip")} download className="px-btn px-btn-blue !text-xs text-center">⬇️ 点击下载</a>
+            <a href={publicPath("/one-day-intern-player-v1.0.0.zip")} download className="px-btn px-btn-blue !text-base !font-bold text-center">⬇️ 点击下载</a>
           </article>
           <article className="px-card px-card-hover skill-pack-card skill-card-locked" aria-disabled="true">
             <h3>产品运营</h3>
@@ -326,9 +326,9 @@ export default function Home() {
           </div>
           <div className="skill-step-grid">
             {[
-              ["①", "下载体验包", "拿到 zip，解压成独立文件夹。"],
-              ["②", "打开文件夹", "用 Codex 打开项目目录。"],
-              ["③", "一句话开玩", "说“开始实习”，让 AI 在飞书里拉你上班。"],
+              ["1", "下载体验包", "拿到 zip，解压成独立文件夹。"],
+              ["2", "打开文件夹", "用 Codex 打开项目目录。"],
+              ["3", "一句话开玩", "说“开始实习”，让 AI 在飞书里拉你上班。"],
             ].map(([number, title, detail]) => (
               <div key={title} className="skill-step">
                 <span className="skill-step-number">{number}</span>

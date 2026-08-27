@@ -118,6 +118,7 @@ body {
   justify-content: center;
   width: 30px;
   height: 30px;
+  border-radius: 50%;
   background: var(--blue);
   border: 2px solid var(--ink);
   color: var(--white);
@@ -459,7 +460,15 @@ html { scroll-behavior: smooth; }
   cursor: pointer;
 }
 .quest-item:hover { transform: translateY(-6px); background: #dcefff; }
-.quest-item .qicon { font-size: 26px; display: block; margin-bottom: 8px; }
+.quest-item .qicon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  margin-bottom: 8px;
+  font-size: 26px;
+  line-height: 1;
+}
 .quest-item .qname { font-size: 13px; line-height: 1.5; }
 .quest-item .qno {
   position: absolute; top: -10px; left: -10px;
