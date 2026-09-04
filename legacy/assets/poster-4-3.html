@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>一日实习生 · 像素城市海报 4:3</title>
+  <style>
+    @font-face {
+      font-family: "Zpix";
+      src: url("https://cdn.jsdelivr.net/gh/SolidZORO/zpix-pixel-font@latest/dist/Zpix.ttf") format("truetype");
+      font-display: swap;
+    }
+
+    :root {
+      --navy: #0b2a6b;
+      --blue: #2f6bff;
+      --sky: #7cc4ff;
+      --sky-pale: #dcefff;
+      --yellow: #ffd23e;
+      --green: #4fca74;
+      --green-dark: #167345;
+      --ink: #10285d;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body {
+      min-width: 1240px;
+      display: grid;
+      place-items: center;
+      padding: 48px 20px;
+      background: #17224c;
+      font-family: "Zpix", "Microsoft YaHei", monospace;
+    }
+
+    /* 4:3 export canvas: 1200 × 900. Open with ?export=1 for a clean canvas. */
+    .poster {
+      position: relative;
+      width: 1200px;
+      height: 900px;
+      overflow: hidden;
+      isolation: isolate;
+      background: linear-gradient(180deg, #80caff 0 59%, #e0f6ff 59% 69%, #97e288 69% 100%);
+      box-shadow: 0 24px 0 rgba(0, 0, 0, .22);
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      opacity: .24;
+      background-image: linear-gradient(rgba(255,255,255,.5) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,.5) 2px, transparent 2px);
+      background-size: 30px 30px;
+    }
+
+    .topbar {
+      position: absolute;
+      z-index: 8;
+      inset: 0 0 auto;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 38px;
+      color: #fff;
+      background: var(--navy);
+      border-bottom: 6px solid var(--yellow);
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+    .brand { color: var(--yellow); }
+    .brand i { display: inline-block; width: 12px; height: 12px; margin-right: 11px; background: #5dff8a; box-shadow: 4px 4px 0 #1c4c99; }
+    .system { color: var(--sky-pale); font-size: 15px; }
+
+    .cloud { position: absolute; z-index: 1; width: 218px; height: 67px; background: #fff; filter: drop-shadow(7px 7px 0 rgba(29,95,188,.18)); }
+    .cloud::before { content: ""; position: absolute; left: 38px; top: -27px; width: 102px; height: 32px; background: #fff; box-shadow: 25px -17px 0 #fff; }
+    .cloud::after { content: ""; position: absolute; left: -19px; bottom: 0; width: 256px; height: 24px; background: #fff; }
+    .cloud-a { top: 136px; left: 74px; transform: scale(.62); }
+    .cloud-b { top: 110px; right: 170px; transform: scale(.92); opacity: .92; }
+    .cloud-c { top: 292px; right: 35px; transform: scale(.52); opacity: .78; }
+
+    .sun { position: absolute; z-index: 1; top: 153px; right: 77px; width: 102px; height: 102px; background: var(--yellow); box-shadow: 16px 0 0 #ffed9e, -16px 0 0 #ffed9e, 0 16px 0 #ffed9e, 0 -16px 0 #ffed9e; }
+    .sun::after { content: "+"; position: absolute; inset: 0; display: grid; place-items: center; color: var(--navy); font-size: 45px; }
+
+    .copy { position: absolute; z-index: 4; top: 135px; left: 79px; width: 705px; }
+    .badge { display: inline-block; padding: 11px 18px; color: var(--navy); background: var(--yellow); border: 4px solid var(--navy); box-shadow: 7px 7px 0 var(--navy); font-size: 20px; letter-spacing: 2px; }
+    h1 { margin: 31px 0 8px; color: var(--navy); font-size: 108px; line-height: 1; letter-spacing: 7px; text-shadow: 7px 7px 0 #dcefff, 14px 14px 0 rgba(47,107,255,.36); white-space: nowrap; }
+    .en { color: var(--blue); font-size: 20px; letter-spacing: 5px; }
+    .slogan { display: inline-block; margin-top: 30px; padding: 15px 22px; color: var(--navy); background: rgba(255,255,255,.9); border: 4px solid var(--navy); box-shadow: 8px 8px 0 rgba(11,42,107,.4); font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; font-size: 25px; font-weight: 800; line-height: 1.35; }
+    .slogan strong { color: var(--blue); }
+
+    .speech { position: absolute; z-index: 5; top: 365px; left: 484px; padding: 16px 22px; color: #fff; background: var(--navy); border: 4px solid #fff; box-shadow: 7px 7px 0 rgba(11,42,107,.32); font-size: 18px; letter-spacing: 1px; }
+    .speech::after { content: ""; position: absolute; left: 34px; bottom: -19px; width: 0; height: 0; border-top: 19px solid #fff; border-right: 23px solid transparent; }
+    .speech::before { content: ""; position: absolute; z-index: 1; left: 38px; bottom: -13px; width: 0; height: 0; border-top: 15px solid var(--navy); border-right: 18px solid transparent; }
+
+    .city { position: absolute; z-index: 2; right: 0; bottom: 241px; width: 720px; height: 292px; }
+    .building { position: absolute; bottom: 0; border: 7px solid var(--navy); background-color: #4b7ad6; box-shadow: inset -10px 0 0 rgba(11,42,107,.18); }
+    .building::before { content: ""; position: absolute; inset: 20px 14px 15px; background: repeating-linear-gradient(90deg, #dff6ff 0 19px, transparent 19px 33px), repeating-linear-gradient(180deg, #dff6ff 0 16px, transparent 16px 29px); opacity: .96; }
+    .building::after { content: ""; position: absolute; left: -7px; right: -7px; top: 32px; height: 8px; background: var(--navy); }
+    .b1 { left: 19px; width: 127px; height: 193px; }
+    .b2 { left: 137px; width: 156px; height: 248px; background-color: #2f6bff; }
+    .b2 .antenna { position: absolute; top: -57px; left: 67px; width: 8px; height: 55px; background: var(--navy); }
+    .b2 .antenna::after { content: ""; position: absolute; top: -8px; left: -5px; width: 18px; height: 18px; background: var(--yellow); border: 4px solid var(--navy); }
+    .b3 { left: 281px; width: 119px; height: 163px; background-color: #638edc; }
+    .b4 { left: 390px; width: 161px; height: 230px; background-color: #3158b4; }
+    .b5 { left: 541px; width: 137px; height: 181px; background-color: #4574ce; }
+    .building .door { position: absolute; z-index: 1; bottom: 0; left: 50%; width: 33px; height: 52px; transform: translateX(-50%); background: var(--navy); border: 5px solid #9fd8ff; }
+
+    .ground { position: absolute; z-index: 3; left: 0; right: 0; bottom: 0; height: 285px; background: linear-gradient(#77cf69 0 19%, #5cb95c 19% 100%); border-top: 8px solid var(--green-dark); }
+    .ground::before { content: ""; position: absolute; inset: 0; opacity: .32; background-image: linear-gradient(90deg, transparent 0 24px, #2b8a4c 24px 30px, transparent 30px 60px), linear-gradient(0deg, transparent 0 20px, #83e07c 20px 27px, transparent 27px 54px); background-size: 60px 54px; }
+    .path { position: absolute; z-index: 1; left: 458px; top: 0; width: 384px; height: 100%; background: #ffe1a6; clip-path: polygon(45% 0, 62% 0, 100% 100%, 0 100%); border-left: 8px solid #dfad66; border-right: 8px solid #dfad66; }
+    .path::after { content: ""; position: absolute; inset: 0; opacity: .35; background: repeating-linear-gradient(0deg, transparent 0 42px, #dca261 42px 49px); }
+
+    .tree { position: absolute; z-index: 4; bottom: 93px; width: 168px; height: 270px; }
+    .tree .trunk { position: absolute; left: 75px; bottom: 0; width: 35px; height: 131px; background: #80502f; box-shadow: 12px 0 0 #5b3826; }
+    .tree .leaf { position: absolute; background: var(--green); border: 7px solid var(--green-dark); box-shadow: 10px 10px 0 rgba(14,105,57,.25); }
+    .tree .l1 { left: 13px; top: 57px; width: 112px; height: 96px; }
+    .tree .l2 { left: 53px; top: 14px; width: 102px; height: 109px; background: #69da70; }
+    .tree .l3 { left: 0; top: 111px; width: 143px; height: 82px; background: #42b968; }
+    .tree .leaf::after { content: ""; position: absolute; left: 22px; top: 20px; width: 15px; height: 15px; background: #a0f184; box-shadow: 38px 0 0 #a0f184, 0 35px 0 #a0f184; }
+    .tree-left { left: 32px; transform: scale(1.12); transform-origin: bottom left; }
+    .tree-right { right: 34px; transform: scale(.89); transform-origin: bottom right; }
+
+    .intern { position: absolute; z-index: 6; left: 345px; bottom: 75px; width: 230px; height: 315px; image-rendering: pixelated; filter: drop-shadow(12px 13px 0 rgba(11,42,107,.22)); }
+    .intern svg { width: 100%; height: 100%; }
+    .start { position: absolute; z-index: 7; right: 47px; bottom: 31px; padding: 11px 18px; color: var(--yellow); background: var(--navy); border: 4px solid #fff; font-size: 17px; letter-spacing: 2px; box-shadow: 6px 6px 0 rgba(11,42,107,.35); }
+    .start::before { content: "▶ "; color: #5dff8a; }
+    .footer { position: absolute; z-index: 8; left: 30px; bottom: 24px; color: #e5f6ff; font-size: 14px; letter-spacing: 2px; text-shadow: 2px 2px 0 #347e4d; }
+
+    @media (max-width: 1240px) {
+      body { min-width: 0; padding: 0; background: #17224c; }
+      .poster { transform: scale(calc(100vw / 1200)); transform-origin: top center; margin-bottom: calc(-900px + 75vw); }
+    }
+    @media print {
+      body { min-width: 0; padding: 0; background: #fff; }
+      .poster { box-shadow: none; }
+      @page { margin: 0; size: 1200px 900px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="poster" aria-label="一日实习生像素城市宣传海报，比例 4 比 3">
+    <header class="topbar">
+      <span class="brand"><i></i>ONE-DAY INTERN</span>
+      <span>★ 开源 · 游戏化 · 实习模拟器 ★</span>
+      <span class="system">PRESS START · v1.0</span>
+    </header>
+
+    <div class="cloud cloud-a" aria-hidden="true"></div>
+    <div class="cloud cloud-b" aria-hidden="true"></div>
+    <div class="cloud cloud-c" aria-hidden="true"></div>
+    <div class="sun" aria-hidden="true"></div>
+
+    <section class="copy">
+      <div class="badge">★ 今天，体验一份工作 ★</div>
+      <h1>一日实习生</h1>
+      <div class="en">ONE-DAY INTERN · AI CAREER ADVENTURE</div>
+      <p class="slogan">不用投简历，也能<strong>当场上班</strong>。<br>打开一日实习生，开启你的职场副本。</p>
+    </section>
+
+    <div class="speech">你好！今天也要<br>好好上班（摸鱼）哦！</div>
+
+    <section class="city" aria-label="像素高楼大厦">
+      <div class="building b1"><span class="door"></span></div>
+      <div class="building b2"><span class="antenna"></span><span class="door"></span></div>
+      <div class="building b3"><span class="door"></span></div>
+      <div class="building b4"><span class="door"></span></div>
+      <div class="building b5"><span class="door"></span></div>
+    </section>
+
+    <div class="ground"><div class="path"></div></div>
+    <div class="tree tree-left" aria-label="像素绿树"><i class="trunk"></i><i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i></div>
+    <div class="tree tree-right" aria-label="像素绿树"><i class="trunk"></i><i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i></div>
+
+    <div class="intern" aria-label="穿蓝色卫衣、戴黄色工牌的像素实习生">
+      <svg viewBox="0 0 24 32" shape-rendering="crispEdges" role="img" aria-hidden="true">
+        <rect x="7" y="1" width="10" height="2" fill="#0b2a6b"/><rect x="5" y="3" width="14" height="3" fill="#0b2a6b"/>
+        <rect x="6" y="5" width="12" height="7" fill="#ffe3c9"/><rect x="7" y="7" width="3" height="3" fill="#0b2a6b"/><rect x="14" y="7" width="3" height="3" fill="#0b2a6b"/><rect x="6" y="11" width="2" height="1" fill="#ff9d9d"/><rect x="16" y="11" width="2" height="1" fill="#ff9d9d"/>
+        <rect x="4" y="12" width="16" height="10" fill="#2f6bff"/><rect x="2" y="14" width="3" height="6" fill="#2f6bff"/><rect x="19" y="14" width="3" height="6" fill="#2f6bff"/><rect x="10" y="14" width="4" height="6" fill="#ffd23e"/><rect x="11" y="15" width="2" height="2" fill="#fff"/>
+        <rect x="7" y="22" width="4" height="7" fill="#0b2a6b"/><rect x="14" y="22" width="4" height="7" fill="#0b2a6b"/><rect x="5" y="28" width="6" height="3" fill="#7cc4ff"/><rect x="14" y="28" width="6" height="3" fill="#7cc4ff"/>
+        <rect x="20" y="8" width="2" height="2" fill="#ffd23e"/><rect x="21" y="6" width="1" height="1" fill="#ffd23e"/>
+      </svg>
+    </div>
+
+    <div class="start">开始实习</div>
+    <div class="footer">▲ 在虚构公司，沉浸式上一天班</div>
+  </main>
+</body>
+</html>

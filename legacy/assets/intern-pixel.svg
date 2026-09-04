@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 16 16" shape-rendering="crispEdges" role="img" aria-labelledby="title desc">
+  <title id="title">像素实习生酱</title>
+  <desc id="desc">戴黄色工牌、穿蓝色卫衣的像素小人</desc>
+
+  <!-- 头发 -->
+  <rect x="4" y="1" width="8" height="2" fill="#0b2a6b"/>
+  <rect x="3" y="2" width="10" height="2" fill="#0b2a6b"/>
+
+  <!-- 脸、眼睛、腮红 -->
+  <rect x="4" y="3" width="8" height="4" fill="#ffe3c9"/>
+  <rect x="5" y="4" width="2" height="2" fill="#0b2a6b"/>
+  <rect x="9" y="4" width="2" height="2" fill="#0b2a6b"/>
+  <rect x="4" y="6" width="1" height="1" fill="#ff9d9d"/>
+  <rect x="11" y="6" width="1" height="1" fill="#ff9d9d"/>
+
+  <!-- 蓝色工牌卫衣 -->
+  <rect x="3" y="7" width="10" height="5" fill="#2f6bff"/>
+  <rect x="7" y="8" width="2" height="3" fill="#ffd23e"/>
+  <rect x="2" y="8" width="1" height="3" fill="#2f6bff"/>
+  <rect x="13" y="8" width="1" height="3" fill="#2f6bff"/>
+
+  <!-- 腿和鞋 -->
+  <rect x="5" y="12" width="2" height="3" fill="#0b2a6b"/>
+  <rect x="9" y="12" width="2" height="3" fill="#0b2a6b"/>
+  <rect x="4" y="14" width="3" height="1" fill="#7cc4ff"/>
+  <rect x="9" y="14" width="3" height="1" fill="#7cc4ff"/>
+</svg>

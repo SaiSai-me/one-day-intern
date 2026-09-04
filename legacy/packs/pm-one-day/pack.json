@@ -1,0 +1,60 @@
+{
+  "schema_version": 2,
+  "id": "pm-one-day",
+  "name": "产品经理·一日实习",
+  "tagline": "为年轻创作者改造短视频发布前的最后一步",
+  "role": "产品经理实习生",
+  "company": "青橙视频",
+  "author": "一日实习生官方",
+  "version": "0.4.0",
+  "difficulty": "职场写实",
+  "tags": ["产品经理", "短视频", "创作者", "To C", "新手友好"],
+  "default_mode": "demo",
+  "runtime_profile": "codex-v0.4",
+  "runtime_limits": {
+    "target_minutes": [22, 25],
+    "stop_story_after_minutes": 27,
+    "hard_deadline_minutes": 30,
+    "message_batch_seconds": 15,
+    "npc_gap_seconds_max": 2,
+    "max_revision_rounds": 1
+  },
+  "time_scale": {
+    "demo_fast": {
+      "description": "速通模式,全程约10分钟",
+      "gap_seconds": [15, 35],
+      "choice_timeout": 25,
+      "silence_nudge": 50,
+      "think_delay": [2, 5]
+    },
+    "demo": {
+      "description": "快速体验模式(默认),全程约18-22分钟",
+      "gap_seconds": [40, 80],
+      "choice_timeout": 45,
+      "silence_nudge": 90,
+      "think_delay": [3, 8]
+    },
+    "demo_chill": {
+      "description": "慢节奏模式,全程约28-35分钟",
+      "gap_seconds": [70, 130],
+      "choice_timeout": 70,
+      "silence_nudge": 150,
+      "think_delay": [5, 12]
+    },
+    "immersive": {
+      "description": "沉浸模式,约1-2小时(真实钟点×0.12~0.25压缩比)",
+      "gap_seconds": null,
+      "time_compression": [0.12, 0.25],
+      "choice_timeout": 120,
+      "silence_nudge": 240,
+      "think_delay": [5, 15]
+    }
+  },
+  "timing_note": "所有时间参数均为建议默认值,玩家可通过一句话随时调速(快进/慢一点/X分钟速通/暂停/跳过),无需重启",
+  "gauges": ["好感度_boss", "摸鱼指数", "吵架次数", "任务完成"],
+  "requires": {
+    "domains":  ["im", "task", "calendar", "docs", "sheets"],
+    "optional": ["drive", "attendance"]
+  },
+  "stats": { "events": 11, "choices": 2, "npcs": 5 }
+}

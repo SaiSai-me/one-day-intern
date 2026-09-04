@@ -1,0 +1,4 @@
+interface:
+  display_name: "一日实习生"
+  short_description: "让 Codex 在飞书中导演一场产品经理一日实习体验"
+  default_prompt: "使用 $one-day-intern 开始一场产品经理一日实习。"

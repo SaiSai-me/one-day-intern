@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "sync:skill": "node -e \"require('node:fs').copyFileSync('../dist/codex/one-day-intern-codex-v0.4.0.zip', 'public/one-day-intern-codex-v0.4.0.zip')\"",
+    "build": "npm run sync:skill && next build",
     "start": "next start"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.110.0",
-    "next": "16.2.10",
+    "next": "16.3.3",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },

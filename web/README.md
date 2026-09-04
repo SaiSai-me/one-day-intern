@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 一日实习生 · Landing Page
 
-## Getting Started
+网站是“一日实习生”的单页 Landing Page，只承担产品介绍和 Codex Skill 体验包分发：
 
-First, run the development server:
+- 介绍产品概念与体验流程
+- 下载 `one-day-intern-codex-v0.4.0.zip` Codex Skill 体验包
+- 引导用户配置飞书并开始实习
+
+网站不提供账号、实习包市场、上传、收藏、直播看板或其他后端功能，也不依赖 Supabase。
+
+## 本地开发
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 <http://localhost:3000>。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 生产构建
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+当前使用 Next.js 静态导出，构建产物位于 `out/`，可直接发布到 GitHub Pages。
 
-To learn more about Next.js, take a look at the following resources:
+## 发布到 GitHub Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+仓库根目录的 `.github/workflows/deploy-pages.yml` 会在推送 `main` 分支时自动构建并发布网站。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. 将仓库推送到 GitHub（默认分支使用 `main`）。
+2. 在仓库的 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**。
+3. 等待 Actions 中的 `Deploy website to GitHub Pages` 完成。
+4. 在 **Settings → Pages** 查看访问地址，项目页通常为 `https://<用户名>.github.io/<仓库名>/`。
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+工作流会自动为项目页设置 `basePath`；如果仓库名是 `<用户名>.github.io`，则会按用户主页处理，不添加额外路径。

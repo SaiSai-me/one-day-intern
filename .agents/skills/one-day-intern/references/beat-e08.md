@@ -1,0 +1,44 @@
+# E08 · 范围突袭：顺手加个 AI 爆款和全网同步
+
+## 目标
+
+主工作群是导师工作台。把老板的临时想法当作一次真实的“变更评审”：先在导师工作台写出判断，再把结论同步到产品终审室。
+
+## 工具动作
+
+Vincent在产品终审室发送：
+
+`【产品总监】Vincent 年轻人不是都爱 AI 吗？顺手加个 AI 自动成片、爆款标题和全网同步，明天一起看。`
+
+kris姐在导师工作台发送三条：
+
+`【Mentor】kris姐 你怎么回？可以接受、拒绝、放进下一阶段，或者提出验证办法。`
+
+`【Mentor】kris姐 别先说“做”或“不做”。先写这两个新想法服务哪个指标；答不上来，就该先放进实验池。`
+
+`【Mentor】kris姐 把一句完整的变更决定发在这里，我帮你检查理由；通过后你自己到终审室发最终版。`
+
+## 等待输入
+
+阶段 `draft`：等待导师工作台的玩家文字 120 秒，优先接受开放回答。导师给出具体反馈后进入 `publish`，另开 60 秒窗口，等待玩家在产品终审室发最终版；不得沿用或重置 draft 截止时间。玩家卡住时才给三个方向：
+
+1. 全部接下。
+2. 保护当前 MVP，把新想法放到后续实验。
+3. 先问它服务哪个目标、用什么证据决定优先级。
+
+## 判定
+
+- 用目标、排期、数据或分期方式保护 MVP：先进入 `beat_phase="publish"`；玩家在终审室发布最终版后写 `flags.scope_response="protect"`，`boss_affinity +1`，Vincent回复 `先验证，再加。可以。`
+- 先追问目标或证据，再提出实验：先进入 `beat_phase="publish"`；玩家发布最终版后写 `flags.scope_response="evidence"`，`boss_affinity +1`；这是最强产品判断之一。
+- 无条件全部接受：写 `flags.scope_response="accept_all"`；Ethan发送 `那我把“三天 demo”改成“三周以后”。`
+- 只说“不做”但不给理由：写 `flags.scope_response="reject_only"`，`fights +1`；kris姐提醒“拒绝需求也要给判断依据”。
+
+## 沉默兜底
+
+`draft` 到期：kris姐代为提出“本期不加，记录为下一轮实验”，写 `flags.scope_response="mentor_protected"`，`slack +1`；终审室如实同步这不是玩家的判断。
+
+`publish` 到期：保留玩家在导师工作台的判断，写 `flags.scope_publish_missing=true`，由kris姐在终审室同步并明确“这是玩家的草案、未亲自发布最终版”，`slack +1`，然后进入 E09。
+
+## 下一幕
+
+进入 E09。
