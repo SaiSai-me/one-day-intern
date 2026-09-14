@@ -1,72 +1,128 @@
 # 一日实习生 One-Day Intern
 
-> 在你的真实飞书里，上一天虚构的班。
+> **加入公司之前，先在飞书里上一次班。**
 
-一日实习生是一套由 Codex 驱动的产品经理互动实习体验。Codex 扮演导演和 NPC，飞书群聊、任务、日历、文档和电子表格充当游戏舞台。
+![一日实习生](web/public/intern-hero.jpg)
 
-## 正式交付物
+一日实习生是一场发生在真实飞书界面里的互动式岗位体验。
 
-本项目只维护两个正式交付物：
+你会被拉进一家虚构公司的工作群，收到同事消息、飞书任务和需要亲自修改的 PRD。AI 同事会根据你的真实回复继续讨论；你需要问清成本、与老板协商范围、回团队同步分工，最后提交一份可以被检查的工作成果。
 
-1. **Codex Skill**：源码位于 `.agents/skills/one-day-intern/`，发布包为 [`dist/codex/one-day-intern-codex-v0.4.0.zip`](dist/codex/one-day-intern-codex-v0.4.0.zip)。
-2. **GitHub Pages Landing Page**：源码位于 `web/`，只负责产品介绍、配置引导和 Skill 下载。
+当前版本内置的是一场完整的**产品经理实习**。你会加入虚构短视频公司“青橙视频”，从认识团队开始，查看业务数据和用户反馈，与产品、研发和运营协作，完成需求判断、PRD、评审、范围调整和上线决策。
 
-网站不提供账号、市场、上传、收藏、直播看板或后端服务，也不依赖 Supabase。
+这里没有预设的标准台词。你可以追问、反对、提出自己的方案，也可以根据新信息改变决定。AI 同事会回应你的实际判断，最终反馈只引用你真正说过和提交过的内容。
+
+[下载正式版实习包](dist/codex/one-day-intern-codex-v0.4.0.zip) · [查看产品介绍页](https://saisai-me.github.io/one-day-intern/) · [先看入职说明](https://wqua64v2akt.feishu.cn/docx/TCwtdW1EKoWtOUxtySbc9JJtnQb)
+
+## 你会体验什么
+
+- **真的进入工作现场**：公司群、导师 Chat、老板 Chat 都在飞书里，老板、研发、运营会公开讨论甚至争论。
+- **真的参与协作**：你需要在不同 Chat 之间传递信息、给出判断并明确负责人，不能只埋头改文档。
+- **真的提交工作成果**：最终交付是一份飞书 PRD 和一个飞书任务。点击完成只是交作业，系统会读取文档最新版本再验收。
+- **每个选择都有后果**：同事会根据你的理由和实际产出回应，剧情也会记录你的选择。
+- **中断后可以继续**：群聊、任务、文档和进度都会被记录，重新打开后可以从原位置恢复。
+
+所有角色共用同一个飞书机器人，并通过 `【产品总监 Vincent】`、`【技术负责人 Ethan】` 等前缀区分。公司、人物和业务数据均为虚构；群聊、文档、评论和任务是真实创建并实际操作的飞书对象。
+
+## 今天的公司：青橙视频
+
+你是“青橙视频”创作发布产品组的产品经理实习生。团队发现，不少新手已经剪完视频，却在封面、标题、话题和可见范围面前犹豫，最后没有发布，或者发布后马上删除重来。
+
+你的任务是在五天交付期限内，把一句模糊的“让发视频像发动态一样顺”变成一个有用户、有指标、有范围边界、能被研发执行的 MVP。
+
+你会与五位同事一起工作：
+
+| 同事 | 他/她关心什么 |
+| --- | --- |
+| `【人事 Chloe】` | 带你入组、发放任务、组织收尾 |
+| `【Mentor kris姐】` | 帮你拆问题，但不会替你做决定 |
+| `【产品总监 Vincent】` | 追问目标、指标和取舍 |
+| `【技术负责人 Ethan】` | 给出开发成本、依赖和风险 |
+| `【运营 Aria】` | 带来用户原话和一线风险 |
+
+## 一次实习怎样进行
+
+```mermaid
+flowchart LR
+    A[进入虚拟公司] --> B[阅读消息和业务材料]
+    B --> C[与老板和同事沟通]
+    C --> D[修改飞书 PRD]
+    D --> E[完成任务并提交]
+    E --> F[收到有原文依据的反馈]
+```
+
+一次体验约 25 分钟，会经历入职、数据判断、需求澄清、用户洞察、技术对齐、PRD 提交、终极评审、上线决策和下班复盘。
 
 ## 开始体验
 
-### 准备
+### 1. 准备环境
 
-- Codex Desktop
-- 一个可使用自建应用的飞书账号
-- 已安装并授权所需飞书能力
+你需要：
+
+- [Codex Desktop](https://openai.com/codex/)
+- 一个可以配置自建应用的飞书账号
+- [飞书 CLI](https://www.feishu.cn/feishu-cli)
 - Python 3
 
-### 安装 Skill
+首次使用需要为飞书用户和机器人配置群聊、文档、评论、任务等权限。启动后 Codex 会先检查权限；如果缺少权限，会给出对应的授权链接或管理员配置入口。
 
-下载并解压 [`one-day-intern-codex-v0.4.0.zip`](dist/codex/one-day-intern-codex-v0.4.0.zip)。解压后的目录应包含：
+### 2. 下载实习包
 
-```text
-.agents/
-└── skills/
-    └── one-day-intern/
-        ├── SKILL.md
-        ├── agents/openai.yaml
-        ├── assets/
-        ├── references/
-        ├── scripts/
-        └── tests/
-```
+[下载 `one-day-intern-codex-v0.4.0.zip`](dist/codex/one-day-intern-codex-v0.4.0.zip)，解压到一个独立文件夹，然后用 Codex Desktop 打开这个文件夹。
 
-用 Codex Desktop 打开该目录，然后发送：
+### 3. 说一句话开工
+
+在 Codex 中发送：
 
 ```text
 开始实习
 ```
 
-中断后可以发送“继续实习”从本地存档恢复。
+Codex 会先展示权限说明。检查通过后，它会创建本局需要的三个 Chat、工作文档、任务、日程和数据材料，再把你带入公司群。
 
-## 开发与验证
+## 常用指令
 
-### Skill
+| 你对 Codex 说 | 会发生什么 |
+| --- | --- |
+| `开始实习` | 开始完整的产品经理实习 |
+| `暂停` | 冻结当前剧情与处理进度 |
+| `继续实习` | 从同一批群聊、文档和任务继续 |
+| `结束实习` | 按已有产出提前收尾 |
+
+## 使用前请知道
+
+- 点击“开始实习”后，系统会在你的飞书中创建真实的群聊、文档、任务、日程和数据看板。
+- 系统只读取本局指定 Chat 中属于当前玩家的文本消息，并回查本局创建的工作对象。
+- 飞书认证信息不会写入 Skill、运行日志或发布包。
+- 体验中的 41%、47%、18% 等业务数字均为虚构训练数据，不代表任何真实产品。
+- 当前正式版只内置产品经理岗位。
+
+<details>
+<summary><strong>开发者：查看源码、测试和构建方式</strong></summary>
+
+### 项目结构
+
+```text
+一日实习生/
+├── .agents/skills/one-day-intern/   # Skill 源码、剧本、规则和测试
+├── dist/codex/                      # 可下载的正式 Skill 包
+├── web/                             # 产品介绍页
+├── .github/workflows/               # 测试与 GitHub Pages 部署
+└── legacy/                          # 历史方案，不参与当前构建
+```
+
+### 验证 Skill
 
 ```bash
 python3 -m unittest discover \
   -s .agents/skills/one-day-intern/tests -v
 
 python3 .agents/skills/one-day-intern/scripts/validate-skill.py \
-  .agents/skills/one-day-intern
-
-python3 .agents/skills/one-day-intern/scripts/build-release.py \
-  .agents/skills/one-day-intern \
-  dist/codex/one-day-intern-codex-v0.4.0.zip
-
-python3 .agents/skills/one-day-intern/scripts/validate-skill.py \
   .agents/skills/one-day-intern \
   --release-zip dist/codex/one-day-intern-codex-v0.4.0.zip
 ```
 
-### Landing Page
+### 本地运行介绍页
 
 ```bash
 cd web
@@ -74,29 +130,6 @@ npm ci
 npm run dev
 ```
 
-生产构建：
+运行 `npm run build` 会生成静态页面，并把正式 Skill 包同步到网站下载目录。推送到 `main` 后，GitHub Actions 会执行测试、校验发布包并部署 GitHub Pages。
 
-```bash
-npm run build
-```
-
-构建前会自动把正式 Codex Skill 包同步到网站下载目录。推送到 `main` 后，GitHub Actions 会测试 Skill、校验发布包、审计网页依赖并部署 GitHub Pages。
-
-## 仓库结构
-
-```text
-一日实习生/
-├── .agents/skills/one-day-intern/   # 正式 Skill 源码
-├── .github/workflows/               # GitHub Pages 构建与校验
-├── dist/codex/                      # 当前正式 Skill 包
-├── web/                             # 单页 Landing Page
-└── legacy/                          # 历史方案与旧产物，不参与正式构建
-```
-
-## 数据安全
-
-- 飞书认证信息不得写入 Skill、日志或发布包。
-- `runs/` 和 `legacy/runs/` 均被 Git 忽略。
-- 开局后的建群、建任务和建日程属于真实飞书写入，只会在玩家明确开始后执行。
-
-历史适配器、通用引擎、剧情包、平台原型和旧发布物统一存放在 [`legacy/`](legacy/README.md)，不再作为正式产品维护。
+</details>
