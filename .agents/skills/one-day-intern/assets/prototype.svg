@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="920" viewBox="0 0 1320 920">
+  <rect x="0" y="0" width="1320" height="920" fill="#F4F6F2"/>
+  <circle cx="1232" cy="44" r="28" fill="#E8EFCF"/>
+  <text x="48" y="50" font-family="Noto Sans SC" font-size="14" fill="#527044">青橙 / 共同署名邀请</text>
+  <text x="48" y="99" font-family="Noto Sans SC" font-size="32" font-weight="700" fill="#24342A">一条作品，几个人的名字。</text>
+  <text x="48" y="132" font-family="Noto Sans SC" font-size="16" fill="#69776B">D0 · Mia 的待评审稿　/　同一作品入口，不创建视频副本</text>
+  <rect x="1120" y="86" width="144" height="34" rx="17" fill="#294D36"/>
+  <text x="1144" y="109" font-family="Noto Sans SC" font-size="14" fill="#FFFFFF">待确认 Q1 / Q2</text>
+
+  <text x="48" y="185" font-family="Noto Sans SC" font-size="17" font-weight="700" fill="#294D36">P01 · 上传者发邀请</text>
+  <text x="480" y="185" font-family="Noto Sans SC" font-size="17" font-weight="700" fill="#294D36">P02 · 受邀者作决定</text>
+  <text x="912" y="185" font-family="Noto Sans SC" font-size="17" font-weight="700" fill="#294D36">P03 · 上传者看结果</text>
+
+  <rect x="48" y="204" width="360" height="566" rx="26" fill="#FFFFFF" stroke="#C8D2C8" stroke-width="2"/>
+  <polyline points="78,235 70,243 78,251" fill="none" stroke="#24342A" stroke-width="2"/>
+  <text x="97" y="250" font-family="Noto Sans SC" font-size="19" font-weight="700" fill="#24342A">邀请共同作者</text>
+  <rect x="72" y="280" width="80" height="65" rx="10" fill="#C9DDC3"/>
+  <circle cx="129" cy="298" r="9" fill="#F8D882"/>
+  <polygon points="74,337 96,310 113,326 132,307 151,337" fill="#77956C"/>
+  <text x="168" y="305" font-family="Noto Sans SC" font-size="17" font-weight="700" fill="#24342A">我们的最后一个夏天</text>
+  <text x="168" y="332" font-family="Noto Sans SC" font-size="14" fill="#78837A">上传者：小林</text>
+  <rect x="72" y="372" width="312" height="44" rx="10" fill="#F2F5F0"/>
+  <circle cx="94" cy="391" r="7" fill="none" stroke="#8B978B" stroke-width="2"/>
+  <line x1="99" y1="397" x2="105" y2="403" stroke="#8B978B" stroke-width="2"/>
+  <text x="119" y="400" font-family="Noto Sans SC" font-size="15" fill="#78837A">搜索一起创作的人</text>
+  <circle cx="94" cy="453" r="18" fill="#D7E6CE"/>
+  <text x="87" y="459" font-family="Noto Sans SC" font-size="15" fill="#527044">禾</text>
+  <text x="125" y="459" font-family="Noto Sans SC" font-size="17" fill="#24342A">阿禾</text>
+  <circle cx="366" cy="453" r="10" fill="#527044"/>
+  <polyline points="361,453 365,457 372,448" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="72" y1="485" x2="384" y2="485" stroke="#E8EDE6"/>
+  <circle cx="94" cy="514" r="18" fill="#F1DDC4"/>
+  <text x="87" y="520" font-family="Noto Sans SC" font-size="15" fill="#9A733C">夏</text>
+  <text x="125" y="520" font-family="Noto Sans SC" font-size="17" fill="#24342A">夏夏</text>
+  <circle cx="366" cy="514" r="10" fill="#527044"/>
+  <polyline points="361,514 365,518 372,509" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="72" y1="546" x2="384" y2="546" stroke="#E8EDE6"/>
+  <circle cx="94" cy="575" r="18" fill="#D8E2EB"/>
+  <text x="87" y="581" font-family="Noto Sans SC" font-size="15" fill="#5F7C96">周</text>
+  <text x="125" y="581" font-family="Noto Sans SC" font-size="17" fill="#24342A">小周</text>
+  <circle cx="366" cy="575" r="10" fill="#FFFFFF" stroke="#B9C5B9" stroke-width="2"/>
+  <text x="72" y="647" font-family="Noto Sans SC" font-size="14" fill="#78837A">对方收到后可查看作品并处理邀请</text>
+  <rect x="72" y="682" width="312" height="52" rx="14" fill="#294D36"/>
+  <text x="152" y="715" font-family="Noto Sans SC" font-size="17" fill="#FFFFFF">发送邀请 · 2 人</text>
+
+  <rect x="480" y="204" width="360" height="566" rx="26" fill="#FFFFFF" stroke="#C8D2C8" stroke-width="2"/>
+  <polyline points="510,235 502,243 510,251" fill="none" stroke="#24342A" stroke-width="2"/>
+  <text x="529" y="250" font-family="Noto Sans SC" font-size="19" font-weight="700" fill="#24342A">共同署名邀请</text>
+  <circle cx="523" cy="299" r="19" fill="#D7E6CE"/>
+  <text x="516" y="305" font-family="Noto Sans SC" font-size="15" fill="#527044">林</text>
+  <text x="555" y="295" font-family="Noto Sans SC" font-size="17" font-weight="700" fill="#24342A">小林邀请你共同署名</text>
+  <text x="555" y="320" font-family="Noto Sans SC" font-size="13" fill="#78837A">先看作品，再决定是否加入</text>
+  <rect x="504" y="344" width="312" height="168" rx="14" fill="#C9DDC3"/>
+  <circle cx="758" cy="378" r="19" fill="#F8D882"/>
+  <polygon points="504,492 564,408 619,461 683,385 755,466 816,418 816,512 504,512" fill="#8CAA7F"/>
+  <polygon points="504,500 594,457 678,489 755,438 816,492 816,512 504,512" fill="#64845D"/>
+  <circle cx="660" cy="428" r="24" fill="#FFFFFF"/>
+  <polygon points="654,416 654,440 673,428" fill="#294D36"/>
+  <text x="504" y="547" font-family="Noto Sans SC" font-size="18" font-weight="700" fill="#24342A">我们的最后一个夏天</text>
+  <text x="504" y="577" font-family="Noto Sans SC" font-size="14" fill="#69776B">接受后，你会出现在共同作者列表中</text>
+  <rect x="504" y="596" width="312" height="57" rx="10" fill="#FFF1D1"/>
+  <text x="518" y="620" font-family="Noto Sans SC" font-size="14" font-weight="700" fill="#94672C">Q1 · 主页展示条件待确认</text>
+  <text x="518" y="642" font-family="Noto Sans SC" font-size="12" fill="#94672C">设计注释；定规则后替换为用户说明</text>
+  <rect x="504" y="682" width="106" height="52" rx="14" fill="#F2F5F0"/>
+  <text x="540" y="715" font-family="Noto Sans SC" font-size="17" fill="#52654F">拒绝</text>
+  <rect x="622" y="682" width="194" height="52" rx="14" fill="#294D36"/>
+  <text x="668" y="715" font-family="Noto Sans SC" font-size="17" fill="#FFFFFF">接受共同署名</text>
+
+  <rect x="912" y="204" width="360" height="566" rx="26" fill="#FFFFFF" stroke="#C8D2C8" stroke-width="2"/>
+  <polyline points="942,235 934,243 942,251" fill="none" stroke="#24342A" stroke-width="2"/>
+  <text x="961" y="250" font-family="Noto Sans SC" font-size="19" font-weight="700" fill="#24342A">共同作者</text>
+  <text x="936" y="301" font-family="Noto Sans SC" font-size="18" font-weight="700" fill="#24342A">我们的最后一个夏天</text>
+  <text x="936" y="331" font-family="Noto Sans SC" font-size="14" fill="#78837A">每个人独立处理自己的邀请</text>
+  <circle cx="956" cy="390" r="18" fill="#D7E6CE"/>
+  <text x="949" y="396" font-family="Noto Sans SC" font-size="15" fill="#527044">禾</text>
+  <text x="987" y="396" font-family="Noto Sans SC" font-size="17" fill="#24342A">阿禾</text>
+  <text x="1176" y="396" font-family="Noto Sans SC" font-size="15" fill="#8D783E">等待处理</text>
+  <line x1="936" y1="422" x2="1248" y2="422" stroke="#E8EDE6"/>
+  <circle cx="956" cy="451" r="18" fill="#F1DDC4"/>
+  <text x="949" y="457" font-family="Noto Sans SC" font-size="15" fill="#9A733C">夏</text>
+  <text x="987" y="457" font-family="Noto Sans SC" font-size="17" fill="#24342A">夏夏</text>
+  <text x="1191" y="457" font-family="Noto Sans SC" font-size="15" fill="#527044">已接受</text>
+  <rect x="931" y="486" width="322" height="77" rx="12" fill="#FFF6E3" stroke="#D8A85B" stroke-width="2" stroke-dasharray="6 4"/>
+  <circle cx="956" cy="518" r="18" fill="#D8E2EB"/>
+  <text x="949" y="524" font-family="Noto Sans SC" font-size="15" fill="#5F7C96">周</text>
+  <text x="987" y="524" font-family="Noto Sans SC" font-size="17" fill="#24342A">小周</text>
+  <text id="p03-rejection-state" x="1092" y="524" font-family="Noto Sans SC" font-size="15" fill="#94672C">拒绝结果：待设计</text>
+  <text x="987" y="547" font-family="Noto Sans SC" font-size="12" fill="#94672C">Q2 · 修改这行状态及需要的操作</text>
+  <text x="936" y="610" font-family="Noto Sans SC" font-size="14" fill="#78837A">待处理、接受和拒绝不能混成一种状态</text>
+  <rect x="936" y="682" width="312" height="52" rx="14" fill="#F2F5F0" stroke="#D8E0D4"/>
+  <text x="1024" y="715" font-family="Noto Sans SC" font-size="17" fill="#294D36">邀请其他参与者</text>
+
+  <line x1="228" y1="782" x2="228" y2="807" stroke="#A9B9A2" stroke-width="2"/>
+  <line x1="660" y1="782" x2="660" y2="807" stroke="#A9B9A2" stroke-width="2"/>
+  <line x1="1092" y1="782" x2="1092" y2="807" stroke="#D8A85B" stroke-width="2"/>
+  <text x="64" y="835" font-family="Noto Sans SC" font-size="15" fill="#52654F">发送成功是「已发邀请」，不是「已加入」。</text>
+  <text x="496" y="835" font-family="Noto Sans SC" font-size="15" fill="#52654F">离开页面不等于拒绝；失败不能显示成功。</text>
+  <text x="928" y="835" font-family="Noto Sans SC" font-size="15" fill="#94672C">你与 Mia 的工作区：P03 ↔ R05 ↔ T04</text>
+  <text x="48" y="888" font-family="Noto Sans SC" font-size="12" fill="#8B978B">模拟素材 · 初始设计贡献属于团队；新规则和修改理由由实习生形成。此图不是已上线产品。</text>
+</svg>

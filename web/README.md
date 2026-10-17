@@ -3,7 +3,7 @@
 网站是“一日实习生”的单页 Landing Page，只承担产品介绍和 Codex Skill 体验包分发：
 
 - 介绍产品概念与体验流程
-- 下载 `one-day-intern-codex-v0.4.0.zip` Codex Skill 体验包
+- 下载 `one-day-intern-codex-v0.6.0.zip` Codex Skill 体验包（共同署名邀请，唯一版本、无倒计时）
 - 引导用户配置飞书并开始实习
 
 网站不提供账号、实习包市场、上传、收藏、直播看板或其他后端功能，也不依赖 Supabase。

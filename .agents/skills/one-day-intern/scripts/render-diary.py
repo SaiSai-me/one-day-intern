@@ -21,8 +21,8 @@ REQUIRED_SCALARS = (
     "date",
     "status",
     "tasks_completed",
-    "fights",
-    "slack",
+    "review_rounds",
+    "work_changes",
     "outcome",
     "ending",
 )
@@ -40,8 +40,8 @@ def load_data(path: str) -> dict[str, Any]:
     if missing:
         raise ValueError(f"missing diary fields: {missing}")
     highlights = value.get("highlights")
-    if not isinstance(highlights, list) or not 3 <= len(highlights) <= 5:
-        raise ValueError("highlights must contain 3 to 5 strings")
+    if not isinstance(highlights, list) or not 0 <= len(highlights) <= 5:
+        raise ValueError("highlights must contain 0 to 5 factual strings")
     if not all(isinstance(item, str) for item in highlights):
         raise ValueError("every highlight must be a string")
     return value
@@ -56,13 +56,11 @@ def render(template: str, data: dict[str, Any]) -> str:
     replacements["outcome"] = escape(data["outcome"]).replace("\n", "<br>")
     replacements["ending"] = escape(data["ending"]).replace("\n", "<br>")
     replacements["highlights"] = "\n      ".join(f"<li>{escape(item)}</li>" for item in data["highlights"])
-    result = template
-    for key, value in replacements.items():
-        result = result.replace("{{" + key + "}}", value)
-    leftovers = sorted(set(re.findall(r"\{\{[a-zA-Z0-9_]+\}\}", result)))
-    if leftovers:
-        raise ValueError(f"unresolved template placeholders: {leftovers}")
-    return result
+    pattern = re.compile(r"\{\{([a-zA-Z0-9_]+)\}\}")
+    unknown = set(pattern.findall(template)) - replacements.keys()
+    if unknown:
+        raise ValueError(f"unresolved template placeholders: {sorted(unknown)}")
+    return pattern.sub(lambda match: replacements[match.group(1)], template)
 
 
 def atomic_write(path: Path, text: str) -> None:

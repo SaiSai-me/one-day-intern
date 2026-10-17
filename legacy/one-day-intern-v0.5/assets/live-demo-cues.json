@@ -1,0 +1,24 @@
+{
+  "alignment": [
+    {"after": 0, "room": "company", "text": "【技术负责人 Ethan】自动成片至少三周，全网同步至少两周。这两项塞进五天，最后只能一起看半成品。"},
+    {"after": 2, "room": "company", "text": "【运营 Aria】用户连公开还是私密都没选明白，我们已经替他安排好全网出道了？"},
+    {"after": 10, "room": "company", "text": "【产品总监 Vincent】我说的是让用户更容易发出去。你们别只报不行，给我一个能落地的版本。"},
+    {"after": 18, "room": "company", "text": "【技术负责人 Ethan】「顺手」不是一个工期单位。你先定最小范围，我再给你一个能交的时间。"},
+    {"after": 26, "room": "mentor_dm", "text": "【Mentor kris姐】先别夹在中间道歉。问清最小组合的成本，你才有东西跟 Vincent 谈。"}
+  ],
+  "decision": [
+    {"after": 2, "room": "boss_dm", "text": "【产品总监 Vincent】研发的成本你听到了。你建议这期保什么、砍什么？给我理由，别只把 Ethan 的话转过来。"},
+    {"after": 10, "room": "company", "text": "【运营 Aria】我负责找新手来试。先说好，不拿我们自己的熟练程度冒充新手体验。"},
+    {"after": 18, "room": "company", "text": "【技术负责人 Ethan】等范围拍板。我先列复用部分，新加的两项暂时不进排期。"}
+  ],
+  "handoff": [
+    {"after": 0, "room": "company", "text": "【技术负责人 Ethan】老板那边怎么定？把结论同步群里，我才知道该排哪一版。"},
+    {"after": 8, "room": "company", "text": "【运营 Aria】还有验收。发出去了又秒删，这种“成功”别算在我头上。"},
+    {"after": 16, "room": "mentor_dm", "text": "【Mentor kris姐】老板点头只完成了一半。让研发和运营知道各自要交什么，这才算把事接住。"}
+  ],
+  "revision": [
+    {"after": 4, "room": "company", "text": "【技术负责人 Ethan】我把接口复用项列好了。你把停止条件写进文档，我们就按同一份方案验收。"},
+    {"after": 12, "room": "company", "text": "【运营 Aria】我准备两种检查：发不出去，和发出去了但不该公开。第二种不能当小概率略过。"},
+    {"after": 22, "room": "company", "text": "【技术负责人 Ethan】等你定稿。任务标题前那个圆圈勾上，我就看最新版。"}
+  ]
+}

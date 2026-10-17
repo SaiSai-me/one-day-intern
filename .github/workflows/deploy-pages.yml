@@ -28,7 +28,7 @@ jobs:
         run: |
           python3 .agents/skills/one-day-intern/scripts/validate-skill.py \
             .agents/skills/one-day-intern \
-            --release-zip dist/codex/one-day-intern-codex-v0.4.0.zip
+            --release-zip dist/codex/one-day-intern-codex-v0.6.0.zip
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Setup Node.js
@@ -47,7 +47,7 @@ jobs:
         working-directory: web
         run: npm run build
       - name: Verify published Skill package
-        run: cmp dist/codex/one-day-intern-codex-v0.4.0.zip web/out/one-day-intern-codex-v0.4.0.zip
+        run: cmp dist/codex/one-day-intern-codex-v0.6.0.zip web/out/one-day-intern-codex-v0.6.0.zip
       - name: Disable Jekyll processing
         run: touch web/out/.nojekyll
       - name: Upload Pages artifact

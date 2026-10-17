@@ -38,7 +38,7 @@ lark-cli docs +create --as bot --title "短视频发布体验 MVP · 终审陈�
 玩家在飞书任务中心点击完成作为唯一提交信号。任务事件只用于唤醒；必须用任务详情确认同一 GUID 为 `done`，再执行：
 
 ```bash
-lark-cli docs +fetch --as bot --doc "<document_url>" --detail with-ids --doc-format markdown --json
+lark-cli docs +fetch --as bot --doc "<document_url>" --detail with-ids --doc-format xml --json
 ```
 
 读取结果保存为本地 review snapshot，不保存 token 或凭证到日志。首次读取前记录 `baseline_revision`；再次提交必须满足 `current_revision > last_reviewed_revision`，否则发送“尚未检测到修改”，保持任务为 `open`。

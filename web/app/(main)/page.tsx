@@ -31,7 +31,7 @@ function LockIcon() {
 /* Quest icons (pixel SVG) */
 const QUESTS = [
   {
-    no: 1, name: "被 AI 派活", final: false,
+    no: 1, name: "入组与自我介绍", final: false,
     icon: (
       <svg width="36" height="36" viewBox="0 0 16 16" shapeRendering="crispEdges">
         <rect x="7" y="0" width="2" height="3" fill="#ff5d5d" /><rect x="6" y="2" width="1" height="1" fill="#ff5d5d" /><rect x="9" y="2" width="1" height="1" fill="#ff5d5d" />
@@ -44,7 +44,7 @@ const QUESTS = [
     ),
   },
   {
-    no: 2, name: "建立日程", final: false,
+    no: 2, name: "读反馈与原型", final: false,
     icon: (
       <svg width="36" height="36" viewBox="0 0 16 16" shapeRendering="crispEdges">
         <rect x="2" y="3" width="12" height="11" fill="#0b2a6b" /><rect x="3" y="4" width="10" height="3" fill="#2f6bff" />
@@ -56,7 +56,7 @@ const QUESTS = [
     ),
   },
   {
-    no: 3, name: "被拉进群", final: false,
+    no: 3, name: "回应群内争执", final: false,
     icon: (
       <svg width="36" height="36" viewBox="0 0 16 16" shapeRendering="crispEdges">
         <rect x="3" y="2" width="4" height="1" fill="#0b2a6b" /><rect x="3" y="3" width="4" height="3" fill="#ffe3c9" /><rect x="2" y="7" width="6" height="5" fill="#2f6bff" />
@@ -65,7 +65,7 @@ const QUESTS = [
     ),
   },
   {
-    no: 4, name: "开会吵架", final: false,
+    no: 4, name: "和设计师改图", final: false,
     icon: (
       <svg width="36" height="36" viewBox="0 0 16 16" shapeRendering="crispEdges">
         <rect x="1" y="1" width="8" height="6" fill="#0b2a6b" /><rect x="2" y="2" width="6" height="4" fill="#fff" />
@@ -78,7 +78,7 @@ const QUESTS = [
     ),
   },
   {
-    no: 5, name: "评审被怼", final: false,
+    no: 5, name: "写规则与用例", final: false,
     icon: (
       <svg width="36" height="36" viewBox="0 0 16 16" shapeRendering="crispEdges">
         <rect x="3" y="3" width="10" height="10" fill="#0b2a6b" /><rect x="4" y="4" width="8" height="8" fill="#ffd23e" />
@@ -90,7 +90,7 @@ const QUESTS = [
     ),
   },
   {
-    no: 6, name: "摸鱼划水", final: false,
+    no: 6, name: "处理评审评论", final: false,
     icon: (
       <svg width="36" height="36" viewBox="0 0 16 16" shapeRendering="crispEdges">
         <rect x="3" y="6" width="8" height="5" fill="#0b2a6b" /><rect x="4" y="7" width="6" height="3" fill="#7cc4ff" />
@@ -254,7 +254,7 @@ export default function Home() {
     setQuestsDone(prev => {
       const next = new Set(prev);
       if (next.has(idx)) { next.delete(idx); } else { next.add(idx); }
-      if (next.size === QUESTS.length) showToast("★ 一天通关！实习日记已生成（假装） ★");
+      if (next.size === QUESTS.length) showToast("已看完体验流程。真实工作和评审在飞书里进行。");
       else if (next.has(idx)) showToast("✓ 打卡成功：" + name);
       return next;
     });
@@ -302,8 +302,8 @@ export default function Home() {
         <div className="skill-pack-grid">
           <article className="px-card px-card-hover skill-pack-card">
             <h3>产品经理</h3>
-            <p className="text-xs leading-5 text-[var(--ink)]/70">人人都搞产品经理</p>
-            <a href={publicPath("/one-day-intern-codex-v0.4.0.zip")} download className="px-btn px-btn-blue !text-base !font-bold text-center">⬇️ 点击下载</a>
+            <p className="text-xs leading-5 text-[var(--ink)]/70">共同署名邀请 · 与设计师协作 · 无倒计时</p>
+            <a href={publicPath("/one-day-intern-codex-v0.6.0.zip")} download className="px-btn px-btn-blue !text-base !font-bold text-center">⬇️ 点击下载 v0.6</a>
           </article>
           <article className="px-card px-card-hover skill-pack-card skill-card-locked" aria-disabled="true">
             <h3>产品运营</h3>
@@ -459,7 +459,7 @@ export default function Home() {
           <h2 className="px-h2 mb-6">▶ READY PLAYER ONE</h2>
           <p className="text-sm leading-7 max-w-xl mx-auto text-[var(--ink)]/80 mb-8">
             看完介绍了？准备好开始你的第一份（虚构的）工作了吗？<br/>
-            先下载实习包，然后花 5 分钟配置环境——上班！
+            先下载实习包，完成飞书连接检查，再按自己的节奏上班。
           </p>
         </section>
 

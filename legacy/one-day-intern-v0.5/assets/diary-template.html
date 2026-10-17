@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{player_name}} 的产品经理实习日记</title>
+  <style>
+    :root { --ink:#0b2a6b; --blue:#2f6bff; --sky:#7cc4ff; --yellow:#ffd23e; --red:#ff5d5d; --green:#19b551; --paper:#f4f9ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:32px 16px; color:var(--ink); background:var(--paper); background-image:linear-gradient(var(--sky) 1px,transparent 1px),linear-gradient(90deg,var(--sky) 1px,transparent 1px); background-size:24px 24px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+    main { width:min(620px,100%); margin:auto; padding:28px; background:white; border:4px solid var(--ink); box-shadow:8px 8px 0 var(--ink); }
+    .badge { display:inline-block; padding:5px 10px; margin-bottom:14px; background:var(--yellow); border:3px solid var(--ink); box-shadow:3px 3px 0 var(--ink); font-size:12px; }
+    h1 { margin:0 0 6px; font-size:24px; line-height:1.5; }
+    .meta { margin-bottom:22px; color:var(--blue); font-size:12px; }
+    .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:24px; }
+    .stat { padding:12px 8px; text-align:center; border:3px solid var(--ink); box-shadow:4px 4px 0 var(--ink); }
+    .stat b { display:block; margin-bottom:5px; font-size:24px; }
+    .stat:nth-child(1) b { color:var(--green); } .stat:nth-child(2) b { color:var(--red); } .stat:nth-child(3) b { color:var(--blue); }
+    h2 { display:inline-block; margin:0 0 12px; padding:6px 10px; color:white; background:var(--blue); border:3px solid var(--ink); box-shadow:3px 3px 0 var(--ink); font-size:14px; }
+    ul { padding:0; margin:0 0 24px; list-style:none; }
+    li { margin-bottom:8px; padding:9px 12px; border:2px solid var(--ink); border-left:6px solid var(--yellow); background:var(--paper); font-size:13px; line-height:1.7; }
+    .ending { margin-bottom:22px; padding:14px; border:3px dashed var(--ink); background:#fff8e0; font-size:13px; line-height:1.9; }
+    footer { text-align:center; color:var(--blue); font-size:10px; line-height:1.8; }
+    @media (max-width:520px) { .stats { grid-template-columns:1fr; } main { padding:20px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="badge">📋 实习证明 · {{run_id}}</div>
+    <h1>{{player_name}} · {{title}}</h1>
+    <div class="meta">{{date}} · 青橙视频 · 产品经理实习生 · {{status}}</div>
+    <section class="stats">
+      <div class="stat"><b>{{tasks_completed}}</b><span>完成任务</span></div>
+      <div class="stat"><b>{{fights}}</b><span>职场交锋</span></div>
+      <div class="stat"><b>{{slack}}</b><span>摸鱼指数</span></div>
+    </section>
+    <h2>▶ 今日名场面</h2>
+    <ul>{{highlights}}</ul>
+    <h2>▶ 产品决策结果</h2>
+    <div class="ending">{{outcome}}</div>
+    <h2>▶ HR 结业评语</h2>
+    <div class="ending">{{ending}}</div>
+    <footer>■ 一日实习生 One-Day Intern ■<br>本日记由 Codex 根据本局真实行为日志生成</footer>
+  </main>
+</body>
+</html>
